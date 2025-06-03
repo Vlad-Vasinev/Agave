@@ -1,0 +1,29 @@
+.header-drop
+  top: aCalc(-12)
+  left: 83%
+  transform: translateX(-50%)
+  right: 0
+  visibility: visible
+  text-align: center
+  padding: 0 aCalc(12) 0 aCalc(38)
+  border-radius: aCalc(8)
+  width: aCalc(316)
+  position: absolute
+  z-index: -1
+  background-color: $UniversalGreen
+  overflow: hidden
+  max-height: 0
+  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), padding .3s
+  &.header__info_active 
+    padding: aCalc(52) aCalc(12) aCalc(12) aCalc(38)
+    max-height: 1000px
+    transition: max-height .6s ease-in-out, padding .3s
+  .h1 
+    text-transform: uppercase
+    font-weight: 700
+  .h1, .h3 
+    text-align: left
+    margin-bottom: aCalc(16)
+  &[infoid="0"]
+    background-color: $UniversalGreen
+    border-radius: aCalc(8)

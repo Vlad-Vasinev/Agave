@@ -1,0 +1,383 @@
+//common 
+.container.ui-wrapper 
+  position: relative
+
+.components-containers
+  display: flex
+  justify-content: flex-start
+  flex-wrap: wrap
+  gap: aCalc(20)
+  +r($sm)
+    flex-direction: column  
+    gap: 20px
+
+.ui-containers
+  margin: aCalc(160) 0 aCalc(80) 0
+  display: grid
+  grid-template-columns: repeat(auto-fit, aCalc(300))
+  gap: aCalc(20)
+  +r($sm) 
+    margin: 100px 0 40px 0
+    grid-template-columns: repeat(auto-fit, 164px)
+    gap: 16px
+
+.ui-container
+  margin: aCalc(20) 0
+  +r($sm)
+    margin: 20px 0
+    max-width: 100%
+  padding: aCalc(20) aCalc(16) 
+  border: aCalc(2) dashed $CadmiumOrange
+  border-radius: aCalc(2)
+  max-width: max-content
+  & input, form
+    margin-bottom: aCalc(24)
+    +r($sm)
+      margin-bottom: 16px
+  +r($sm)
+    border-width: 2px
+    border-radius: 2px
+    padding: 20px 10px
+  .block-gap
+    margin-bottom: aCalc(16)
+    +r($sm)
+      margin-bottom: 12px
+    h1 
+      word-wrap: break-word
+    svg 
+      width: aCalc(20)
+      height: aCalc(20)
+      +r($sm)
+        width: 20px
+        height: 20px
+
+.h1 
+  font-size: aCalc(32)
+  line-height: aCalc(40)
+  font-weight: 400
+  +r($sm)
+    font-size: 24px
+    line-height: 32px
+
+.h1-primary
+  color: inherit
+  font-size: calc(26.6666666667px + 13.3333333333*((100vw - 1280px) / 640))
+  line-height: calc(33.3333333333px + 16.6666666667*((100vw - 1280px) / 640))
+  +r($sm)
+    font-size: 24px
+    line-height: 30px
+
+.h2 
+  font-size: aCalc(24)
+  line-height: aCalc(34)
+  font-weight: 400
+  +r($sm)
+    font-size: 18px
+    line-height: 24px
+
+.h3
+  font-size: aCalc(18)
+  line-height: aCalc(26)
+  font-weight: 400
+  color: $DarkToneInk
+  +r($sm)
+    font-size: 16px
+    line-height: 24px
+
+.h4
+  font-size: aCalc(16)
+  line-height: aCalc(24)
+  font-weight: 400
+  color: $DarkToneInk
+  +r($sm)
+    font-size: 11px
+    line-height: 25px
+
+.h4-small
+  font-size: aCalc(16)
+  line-height: aCalc(16)
+  font-weight: 400
+  color: $White
+  +r($sm)
+    font-size: 11px
+    line-height: 25px
+
+.h5
+  font-size: aCalc(12)
+  line-height: aCalc(16)
+  font-weight: 400
+  // color: $BlackPrimary
+  +r($sm)
+    font-size: 11px
+    line-height: 15px
+
+.h5-bold
+  font-size: aCalc(16)
+  line-height: aCalc(16)
+  font-weight: 700
+  // color: $BlackPrimary
+  +r($sm)
+    font-size: 14px
+    line-height: 14px
+
+.h5-desk
+  font-size: aCalc(18)
+  line-height: aCalc(24)
+  font-weight: 400
+  // color: $BlackPrimary
+  +r($sm)
+    font-size: 16px
+    line-height: 20px
+
+.h6
+  font-size: aCalc(16)
+  line-height: aCalc(20)
+  font-weight: 400
+  // color: $BlackPrimary
+  +r($sm)
+    font-size: 12px
+    line-height: 16px
+
+.p1
+  font-size: aCalc(18)
+  line-height: aCalc(26)
+  font-weight: 400
+  // color: $BlackPrimary
+  +r($sm)
+    font-size: 14px
+    line-height: 18px
+
+.btn1
+  font-size: aCalc(18)
+  line-height: aCalc(24)
+  font-weight: 400
+  color: $DarkToneInk
+  transition: all .3s
+  +r($sm)
+    font-size: 16px
+    line-height: 22px
+
+.btnm
+  font-size: aCalc(16)
+  line-height: aCalc(20)
+  font-weight: 500
+  color: $White
+  transition: all .3s
+  +r($sm)
+    font-size: 13px
+    line-height: 18px
+
+.button-primary
+  text-align: center
+  padding: aCalc(10) aCalc(14)
+  border-radius: aCalc(12)
+  color: $White
+  max-width: max-content
+  background-color: $SunsetBlaze
+  +r($sm)
+    border-radius: 12px
+    padding: 10px 14px
+
+.button-secondary
+  text-align: center
+  padding: aCalc(8) aCalc(12)
+  border-radius: aCalc(8)
+  color: $DarkToneInk
+  max-width: max-content
+  background-color: transparent
+  border: 1px solid $Abundance
+  +r($sm)
+    border-radius: 8px
+    padding: 8px 12px
+
+.button-icon-bg
+  text-align: center
+  padding: aCalc(10) aCalc(14)
+  border-radius: aCalc(12)
+  color: $DarkToneInk
+  background-color: $Abundance
+  max-width: max-content
+  display: flex
+  justify-content: space-between
+  align-items: center
+  min-width: aCalc(192)
+  max-width: auto
+  +r($sm)
+    border-radius: 12px
+    padding: 10px 14px
+  &.btn1 svg 
+    width: aCalc(24)
+    height: aCalc(24)
+    +r($sm)
+      width: 24px
+      height: 24px
+
+.button-icon-nobg
+  text-align: center
+  padding: aCalc(8) aCalc(12)
+  border-radius: aCalc(12)
+  color: $DarkToneInk
+  background-color: transparent
+  max-width: max-content
+  border: 1px solid $Abundance
+  display: flex
+  justify-content: space-between
+  align-items: center
+  min-width: aCalc(192)
+  max-width: auto
+  +r($sm)
+    border-radius: 12px
+    padding: 10px 14px
+  &.btn1 svg 
+    width: aCalc(24)
+    height: aCalc(24)
+    +r($sm)
+      width: 24px
+      height: 24px
+
+.button-icon-count
+  position: relative
+  text-align: center
+  padding: aCalc(8) aCalc(24) aCalc(8) aCalc(12)
+  border-radius: aCalc(12)
+  color: $DarkToneInk
+  background-color: $Abundance
+  max-width: max-content
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  min-width: aCalc(192)
+  max-width: auto
+  span
+    font-size: aCalc(16)
+    line-height: aCalc(20)
+    margin-left: aCalc(8)
+    +r($sm)
+      font-size: 12px
+      line-height: 14px
+      margin-left: 4px
+  +r($sm)
+    border-radius: 12px
+    padding: 10px 14px
+  &.btn1 svg 
+    width: aCalc(24)
+    height: aCalc(24)
+    +r($sm)
+      width: 24px
+      height: 24px
+  p 
+    position: absolute
+    padding: aCalc(2) aCalc(4)
+    right: aCalc(8)
+    width: aCalc(20)
+    height: aCalc(20)
+    border-radius: 50%
+    color: $White
+    background-color: $SunsetBlaze
+    +r($sm)
+      width: 12px
+      height: 12px
+
+.input-ordinary-bg
+  padding: aCalc(22) aCalc(16)
+  border-radius: aCalc(8)
+  background-color: $Gray
+  color: $TrolleyGrey
+  border: 1px solid transparent
+  transition: border .3s
+  max-width: 100%
+  +r($sm)
+    padding: 12px 8px
+    border-radius: 8px
+  &:focus
+    border: 1px solid $Silver
+  &::placeholder
+    font-size: aCalc(18)
+    line-height: aCalc(24)
+    font-weight: 400
+    color: $TrolleyGrey
+    +r($sm)
+      font-size: 16px
+      line-height: 20px
+
+.input-ordinary-nobg
+  padding: aCalc(15) aCalc(16)
+  border-radius: aCalc(8)
+  background-color: transparent
+  color: $TrolleyGrey
+  border: 1px solid $Silver
+  transition: background .3s
+  max-width: 100%
+  +r($sm)
+    padding: 12px 8px
+    border-radius: 8px
+  &:focus
+    background-color: $Gray
+  &::placeholder
+    font-size: aCalc(18)
+    line-height: aCalc(24)
+    font-weight: 400
+    color: $TrolleyGrey
+    +r($sm)
+      font-size: 16px
+      line-height: 20px
+
+.input-wrapper
+  position: relative
+  height: aCalc(60)
+  overflow: hidden
+  +r($sm)
+    height: 50px
+  label 
+    position: absolute
+    border-radius: aCalc(8)
+    padding-top: aCalc(8)
+    padding-left: aCalc(16)
+    border: 1px solid $ChristmasSilver
+    width: 100%
+    height: 100%
+    left: 0
+    top: 0
+    color: $BlackOak
+    z-index: 1
+    transition: border .3s
+    +r($sm)
+      padding-top: 4px
+      padding-left: 8px
+      border-radius: 8px
+  input 
+    position: absolute
+    left: aCalc(16) 
+    top: aCalc(10)
+    width: 100%
+    height: 100%
+    color: $Lead
+    background-color: transparent
+    z-index: 2
+    +r($sm)
+      left: 8px
+      top: 8px
+    &:focus + label
+      border: 1px solid $Silver
+    &::placeholder
+      font-size: aCalc(18)
+      line-height: aCalc(24)
+      font-weight: 400
+      color: $Lead
+      +r($sm)
+        font-size: 16px
+        line-height: 20px
+
+.cookie 
+  padding: aCalc(14) aCalc(24)
+  display: flex
+  align-items: center
+  box-shadow: 0px 4px 15px 0px #0000001A
+  border-radius: aCalc(12)
+  +r($sm)
+    padding: 15px
+    border-radius: 12px
+  span 
+    margin-right: aCalc(24)
+    +r($sm)
+      margin-right: 16px

@@ -1,0 +1,753 @@
+
+.product
+  position: relative
+  +r($sm)
+    padding-top: 112px
+
+.product__description-bg
+  top: 0
+  width: 100%
+  z-index: -1
+  position: absolute
+  height: 100%
+  left: 0
+  opacity: 0
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), -webkit-opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1)
+  background: rgba(0, 0, 0, 0.25)
+  +r($sm)
+    display: none
+
+.bg-active
+  z-index: 1988
+  opacity: 1  
+
+.product__properties-list
+  margin-bottom: aCalc(16)
+  +r($sm)
+    margin-bottom: 24px
+
+.product__description-popup
+  max-width: aCalc(807)
+  width: 100%
+  top: 0
+  bottom: 0
+  overflow: auto
+  transform: translateX(100%)
+  position: fixed
+  overflow-y: scroll
+  -webkit-overflow-scrolling: touch
+  z-index: 1999 
+  height: 100vh
+  right: 0
+  background-color: #ffffff
+  padding: aCalc(80)
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), -webkit-transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)
+  +r($sm)
+    top: 0
+    padding: 50px 16px 166px
+    max-width: 100%
+  .h2, h2 
+    @extend .h1-primary
+    margin-bottom: calc(16px + 8 * ((100vw - 1280px)/ 640))
+    +r($sm)
+      margin-bottom: 24px
+  p, .p 
+    @extend .primary-text-p 
+    margin-bottom: calc(16px + 8 * ((100vw - 1280px)/ 640))
+    +r($sm)
+      margin-bottom: 24px
+  .h3, h3 
+    @extend .secondary-title-h2
+    margin-bottom: calc(10.6666666667px + 5.3333333333 * ((100vw - 1280px)/ 640))
+    +r($sm)
+      margin-bottom: 16px
+  ul, ol 
+    margin-bottom: calc(26.6666666667px + 13.3333333333 * ((100vw - 1280px)/ 640))
+    li + li 
+      margin-top: calc(2.6666666667px + 1.3333333333 * ((100vw - 1280px)/ 640))
+    li 
+      @extend .h3
+      display: flex
+      -webkit-box-pack: justify
+      -ms-flex-pack: justify
+      justify-content: space-between
+      div 
+        @extend .h3
+        max-width: calc(182.6666666667px + 91.3333333333*((100vw - 1280px) / 640))
+        width: 100%
+        margin-bottom: 0
+        +r($sm) 
+          max-width: unset
+  .fullscreen-slider__close
+    position: relative
+    z-index: 200
+    margin-left: auto
+    margin-right: 0
+    max-width: aCalc(32)
+    background-color: transparent
+    width: 100%
+    +r($sm)
+      max-width: max-content
+      margin-right: 0
+  .product__properties-title.secondary-title-h2 
+    font-size: aCalc(32)
+    font-style: normal
+    font-weight: 400
+    line-height: aCalc(40)
+    +r($sm)
+      font-size: 24px
+      line-height: 32px
+  .product__properties-el + .product__properties-el
+    margin-top: aCalc(4)
+    +r($sm)
+      margin-top: 8px
+  .product__properties .product__properties-title.secondary-title-h2
+    font-size: aCalc(18)
+    font-style: normal
+    font-weight: 400
+    line-height: aCalc(26)
+    +r($sm)
+      font-size: 16px
+      line-height: 24px
+
+.product__description-info 
+  color: #939393
+  font-size: aCalc(12)
+  font-style: normal
+  font-weight: 400
+  line-height: aCalc(16)
+  text-transform: uppercase
+  margin-bottom: aCalc(24)
+  +r($sm)
+    font-size: 11px
+    font-style: normal
+    font-weight: 400
+    line-height: 15px
+    text-transform: uppercase
+
+.product__description-close
+  cursor: pointer
+  svg
+    transition: .3s
+  &:hover svg
+    transform: rotate(90deg)
+
+.product__description_active
+  transform: translateX(0)
+
+.product__description__title
+  margin-bottom: aCalc(24)
+  +r($sm)
+    margin-bottom: 24px
+
+.product__description-text p
+  margin-bottom: aCalc(24)
+  +r($sm)
+    margin-bottom: 24px
+
+.product__popup
+  position: fixed
+  width: 100vw
+  height: 100vh
+  visibility: hidden
+  z-index: 400
+  transition-duration: .3s
+  display: grid
+  justify-content: center
+  align-content: center
+  background-color: #F5F3F6
+  img
+    width: 100vw
+    object-fit: contain
+    height: 190vh
+    +r($lg1)
+      position: absolute
+      height: 120vh
+      z-index: 100
+    +r($sm)
+      height: auto
+
+.product__popup_active
+  visibility: visible
+
+.product__popup-close
+  position: absolute
+  right: aCalc(80)
+  top: aCalc(80)
+  width: aCalc(64)
+  height: aCalc(64)
+  border-radius: aCalc(12)
+  background-color: #ffffff
+  display: grid
+  justify-content: center
+  align-content: center
+  z-index: 100
+  transition-duration: .3s
+  &:hover
+    background-color: #DCDCDC	
+    svg
+      path
+        stroke: #ffffff
+  +r($lg1)
+    z-index: 101
+  svg
+    path
+      transition-duration: .3s
+    width: aCalc(32)
+    height: aCalc(32)
+
+.product__popup-arrow
+  cursor: pointer
+  position: absolute
+  z-index: 101
+  top: 50%
+  transform: translateY(-50%)
+  width: aCalc(60)
+  height: aCalc(60)
+  &:hover
+    svg
+      path
+        stroke: #F7CE46
+  svg
+    path
+      transition-duration: .3s
+    width: 100%
+    height: aCalc(60)
+
+.product__popup-prew
+  left: aCalc(260)
+
+.product__popup-next
+  right: aCalc(80)
+  transform: rotateY(180deg)
+
+.galleri
+  position: absolute
+  left: aCalc(80)
+  top: aCalc(80)
+  display: flex
+  flex-direction: column
+  z-index: 100
+  +r($lg1)
+    width: 150px
+    z-index: 101
+
+.galleri__el + .galleri__el
+  margin-top: aCalc(10)
+
+.galleri__el
+  max-width: aCalc(100)
+  width: 100%
+  height: aCalc(100)
+  img
+    max-width: aCalc(100)
+    width: 100%
+    height: aCalc(100)
+    object-fit: cover
+
+.product__inner
+  display: flex
+  position: relative
+  align-items: start
+  margin-bottom: aCalc(120)
+  +r($sm)
+    overflow: hidden
+    flex-direction: column
+
+.product__block
+  margin-top: aCalc(30)
+  padding-top: aCalc(151)
+  max-width: aCalc(640)
+  width: 100%
+  margin: 0 aCalc(80)
+  +r($sm)
+    max-width: 100%
+    width: auto
+    margin: 0 16px
+    padding-top: 24px
+
+.product__block_active
+  position: -webkit-sticky
+  position: sticky
+  padding-top: aCalc(100)
+  margin-top: 0
+  top: 0
+  +r($sm)
+    padding-top: 24px
+    position: initial
+
+.product__price 
+  box-sizing: border-box
+  padding: aCalc(24) 
+  padding-left: 0
+  padding-bottom: 0
+  margin-bottom: aCalc(40)
+  +r($sm)
+    padding: 0
+    margin-bottom: 40px
+  .slide-button
+    max-width: aCalc(218)
+    width: 100%
+    border-radius: aCalc(12)
+    display: inline-block
+    padding: aCalc(15) aCalc(32)
+    max-height: aCalc(52)
+    position: relative
+    font-size: aCalc(18)
+    line-height: aCalc(24)
+    transition-duration: .3s
+    position: relative
+    &::after
+      position: absolute
+      content: ""
+      background-size: cover
+      z-index: 200
+      width: aCalc(24)
+      height: aCalc(24)
+      right: 20%
+      top: 50%
+      transform: translateY(-50%)
+      +r($sm)
+        width: 24px
+        height: 24px
+        right: 16px
+    +r($sm)
+      border-radius: 12px
+      max-width: 115px
+      width: 100%
+      padding: 12px 36px 14px 16px
+      min-height: 46px
+      font-size: 16px
+      line-height: 22px
+    span
+      font-size: aCalc(18)
+      line-height: aCalc(24)
+      color:#000000
+      text-transform: capitalize
+      transition-duration: .3s
+      +r($sm)
+        font-size: 16px
+        line-height: 22px
+  .slide-button_icon.slide-button.first-shop
+    margin-right: aCalc(8)
+    background-color: #255AF6
+    span
+      color: #ffffff
+    &::after
+      background-image: url('../../img/ozon.svg')
+    +r($sm)
+      margin-right: 8px
+    &:hover
+      background-color: #2151DE
+  .slide-button_icon.slide-button.second-shop
+    span
+      color: #000000
+    &::after
+      background-image: url('../../img/market.svg')
+    background-color: #F7CE46
+    &:hover
+      background-color: #F1C430
+
+.product__content, .product__slider
+  max-width: aCalc(1189)
+  width: 100%
+  +r($sm)
+  max-width: 100%
+
+.product__slider.swiper 
+  overflow: unset
+  +r($sm)
+    overflow: hidden
+  .product__content.swiper-wrapper
+    flex-direction: column
+    +r($sm) 
+      flex-direction: row
+
+
+.product__text
+  margin-bottom: aCalc(40)
+  &-title
+    font-size: aCalc(24)
+    font-style: normal
+    font-weight: 400
+    line-height: aCalc(34)
+    margin-bottom: aCalc(16)
+  &-el
+    font-size: aCalc(18)
+    font-style: normal
+    font-weight: 400
+    line-height: aCalc(26)
+
+.product__price-title
+  margin-bottom: aCalc(24)
+  +r($sm)
+    font-size: 24px
+    line-height: 32px
+    margin-bottom: 40px
+
+.product__price-subtitle
+  margin-top: aCalc(10)
+  display: block
+  +r($sm)
+    margin-top: 12px
+
+.product__el
+  cursor: pointer
+  width: 100%
+  +r($sm)
+    max-width: 100%
+
+.product__el.swiper-slide
+  display: grid
+  justify-content: center
+  align-items: center
+
+.product__el picture
+  max-width: max-content
+  display: block
+  margin: 0 auto
+
+.product__el video
+  height: aCalc(1189)
+  width: aCalc(1189)
+  +r($sm)
+    width: 100vw
+    height: 375px
+    object-fit: cover
+
+.product__el img
+  object-fit: cover
+  width: aCalc(1189)
+  height: aCalc(1189)
+  +r($sm)
+    background-position: center
+    min-width: unset
+    width: 100vw
+    background-position: center
+    height: 375px
+
+.product__el-mobile img
+  object-fit: cover
+  width: 100%
+  +r($sm)
+    object-fit: cover
+    background-position: center
+    max-height: 375px 
+.product__price-block
+  width: 100%
+  justify-content: flex-start
+  display: inline-flex
+  align-content: center
+  +r($sm)
+    max-width: 100%
+    position: fixed
+    max-height: 86px
+    z-index: 198
+    padding: 20px 16px
+    bottom: 0
+    left: 0
+    background-color: #ffffff
+    box-shadow: 0px -4px 8px 0px rgba(0, 0, 0, 0.08)
+  .slide-button_icon
+    +r($sm)
+      max-width: 100%
+
+.product__price-numb
+  max-width: aCalc(94)
+  width: 100%
+  text-align: center
+  padding: aCalc(12) aCalc(12)
+  font-size: aCalc(18)
+  line-height: aCalc(26)
+  border-radius: aCalc(12)
+  margin-right: aCalc(8)
+  background-color: #F0F0F0
+  +r($sm)
+    max-width: 100%
+    width: 100%
+    font-size: 16px
+    line-height: 22px
+    min-height: 45px
+    padding: 12px
+    border-radius: 12px
+    margin-right: 8px
+  span 
+    font-size: aCalc(18)
+    line-height: aCalc(26)
+    +r($sm)
+      font-size: 16px
+      line-height: 22px
+
+.product__price-btn
+  color: #FFF
+  font-size: aCalc(16)
+  font-style: normal
+  font-weight: 400
+  font-family: 'OpenSans_Regular', sans-serif
+  line-height: aCalc(24)
+  border-radius: aCalc(12)
+  background-color: #00532C
+  max-width: aCalc(120)
+  width: 100%
+  padding: aCalc(12)
+  min-height: aCalc(48)
+
+.ozon::after
+  position: absolute
+  content: ""
+  right: aCalc(54)
+  width: aCalc(24)
+  height: aCalc(24)
+  background-image: url('../../img/ozon.svg')
+  background-repeat: no-repeat
+  background-size: cover
+  z-index: 200
+  +r($sm)
+    right: 16px
+    width: 24px
+    height: 24px
+
+.market::after
+  position: absolute
+  content: ""
+  right: aCalc(54)
+  width: aCalc(24)
+  height: aCalc(24)
+  background-image: url('../../img/market.svg')
+  background-repeat: no-repeat
+  background-size: cover
+  z-index: 200
+  +r($sm)
+    right: 10px
+    width: 24px
+    height: 24px
+
+
+.product__price-el
+  font-size: aCalc(18)
+  line-height: aCalc(26)
+  margin-right: aCalc(8)
+  align-self: center
+  padding: aCalc(12) aCalc(16)
+  border-radius: aCalc(12)
+  background-color: #F0F0F0
+  +r($sm)
+    font-size: 16px
+    line-height: 24px
+    padding: 11px 16px
+    border-radius: 12px
+    margin-right: 8px
+
+.product__info
+  margin-bottom: aCalc(40)
+  +r($sm)
+    margin-bottom: 40px
+
+.product__info-el
+  position: relative
+  color: #000
+  font-size: aCalc(12)
+  font-style: normal
+  line-height: aCalc(16)
+  text-transform: uppercase
+  box-sizing: border-box
+  padding: aCalc(18) aCalc(16)
+  border-top: 1px solid #F0F0F0
+  padding-left: aCalc(40)
+  +r($sm)
+    padding: 14px 32px
+    font-size: 11px
+    line-height: 15px
+
+.product__info-el:last-child
+  border-bottom: 1px solid #F0F0F0
+
+.product__description
+  margin-bottom: aCalc(16)
+  +r($sm)
+    padding-right: 16px
+    margin-bottom: 40px
+
+// .product__description 
+//   p, h2 
+//     display: none
+
+.product__info-icon
+  position: absolute
+  left: 0
+  top: 50%
+  transform: translateY(-50%)
+  width: aCalc(24)
+  height: aCalc(24)
+  z-index: 100
+  +r($sm)
+    width: 20px
+    height: 20px
+
+.product__description-title
+  color: #000
+  margin-bottom: aCalc(16)
+  +r($sm)
+    font-size: 16px
+    margin-bottom: 16px
+
+.product__description-more
+  margin-top: aCalc(16)
+  color: #006837
+  font-size: aCalc(18)
+  font-style: normal
+  font-weight: 400
+  line-height: aCalc(26)
+  border-bottom: 1px solid transparent
+  transition: .3s
+  margin-bottom: aCalc(40)
+  &:hover
+    border-bottom: 1px solid #006837
+  +r($sm)
+    margin-top: 16px
+    font-size: 14px
+    line-height: 20px
+
+.product__properties
+  max-width: aCalc(572)
+  width: 100%
+  +r($sm)
+    max-width: 572px
+
+.product__properties-title
+  margin-bottom: aCalc(12)
+  +r($sm)
+    margin-bottom: 12px
+
+.product__properties-el
+  display: flex
+  justify-content: space-between
+  color: #000
+  font-size: aCalc(18)
+  font-style: normal
+  line-height: aCalc(26)
+  +r($sm)
+    font-size: 11px
+    line-height: 15px
+
+.product__properties-el + .product__properties-el
+  margin-top: aCalc(4)
+  +r($sm)
+    margin-top: 4px
+
+.product__properties-el div
+  max-width: aCalc(274)
+  width: 100%
+  +r($sm)
+    font-size: 14px
+    line-height: 20px
+    max-width: 274px
+
+.product__slider 
+  +r($sm)
+    height: 375px
+    .swiper-wrapper, .swiper-slide
+      height: 375px
+      max-width: 100vw
+
+.product__properties 
+  h2, ul, .product__description-info
+    display: none
+
+.product__description 
+  p, h2 
+    display: none
+
+.preview-content
+  display: block !important
+
+.product__slider.swiper .swiper-pagination  
+  bottom: 16px
+
+.product__slider.swiper .swiper-pagination-bullet
+  +r($sm)
+    background-color: #121212
+    opacity: 0.3
+    width: 4px !important
+    height: 4px !important
+
+.product__slider.swiper .swiper-pagination-bullet.swiper-pagination-bullet-active
+  +r($sm)
+    opacity: 1
+    background-color: #006837
+
+.gallery-thumbs
+  display: block
+  overflow: visible
+  position: absolute
+  max-width: aCalc(100)
+  width: 100%
+  z-index: 20002 !important
+  top: 50%
+  left: aCalc(80)
+  transform: rotate(90deg)
+  +r($sm)
+    display: none
+
+.gallery-thumbs__el
+  cursor: pointer
+  max-width: aCalc(100)
+  min-height: aCalc(100)
+  width: 100%
+
+.gallery-thumbs__el img 
+  transform: rotate(-90deg)
+  height: aCalc(92)
+  object-fit: cover
+  max-width: aCalc(100)
+
+.swiper-slide.fullscreen-slider__slide img
+  transition: 1.2s linear
+
+.gallery-thumbs__content.swiper-wrapper
+  width: aCalc(650)
+
+.gallery-thumbs__content .swiper-pagination-bullet
+  width: aCalc(100)
+  height: aCalc(100)
+  border-radius: 0 !important
+  opacity: 1 !important
+  background-color: transparent
+  border: 2px solid transparent
+
+.gallery-thumbs__el
+  border-radius: unset
+
+.gallery-thumbs__content .swiper-pagination-bullet.swiper-pagination-bullet-active
+  height: 100%
+  background-color: transparent
+  border: 2px solid #006837
+
+.zoo-img:hover
+  cursor: url('../../../img/svg/black-plus.svg'), auto !important
+
+.zoo-img
+  width: 90px
+  height: 90px
+  object-fit: cover
+  cursor: url("../../../img/svg/black-plus.svg"), auto !important
+
+.restrict-height
+  overflow: hidden !important
+  text-overflow: ellipsis !important
+  display: -webkit-box !important
+  -webkit-line-clamp: 4 
+  -webkit-box-orient: vertical 
+
+.product__properties-list
+  li:nth-child(n + 6)
+    display: none
+
+.content-hide
+  display: none !important
+
+.content-show
+  display: block !important
+
+.content-show-flex
+  display: flex !important

@@ -1,0 +1,10 @@
+
+//- name - название файла в папке img/svg/
+mixin svg(name, className, width, height, stroke) 
+  - svgWidth = width || '100%'
+  - svgHeight = height || '100%'
+  //- - stroke = stroke || 'black'
+  svg(width=`${svgWidth}` height=`${svgHeight}` class="icon " + className)
+    use(xlink:href="img/sprite.svg#" + name)
+
+//- stroke

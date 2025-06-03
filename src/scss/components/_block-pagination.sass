@@ -1,0 +1,47 @@
+
+.block-pagination
+  display: flex
+  gap: aCalc(8)
+  margin: aCalc(80) auto
+  position: relative
+  max-width: max-content
+  +r($sm)
+    margin: 40px auto
+    gap: 4px
+  &__btn.block-pagination__btn_hide 
+    display: none
+  &__btn 
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    transition: transform .3s
+    width: aCalc(44)
+    height: aCalc(44)
+    display: grid 
+    justify-content: center
+    align-items: center
+    +r($sm)
+      width: 33px
+      height: 33px
+    &:hover 
+      &.block-pagination_next 
+        svg 
+          transform: scale(1.2)
+      &.block-pagination_prev
+        svg 
+          transform: scale(1.2) rotate(-180deg)
+    svg 
+      transition: transform .3s
+      width: aCalc(30)
+      +r($sm)
+        width: 33px
+  &_next
+    left: aCalc(-54)
+    +r($sm)
+      left: -50px
+  &_prev
+    right: aCalc(-54)
+    svg 
+      transform: rotate(-180deg)
+    +r($sm)
+      right: -50px

@@ -1,0 +1,97 @@
+
+.choosers__el
+  display: flex
+  margin-bottom: aCalc(16)
+  +r($sm)
+    margin-bottom: 19px
+    flex-direction: column
+
+.choosers__el-title
+  align-self: center
+  font-size: aCalc(12)
+  font-style: normal
+  font-weight: 400
+  line-height: aCalc(16)
+  text-transform: uppercase
+  max-width: aCalc(102)
+  width: 100%
+  padding-right: aCalc(12)
+  +r($sm)
+    align-self: start
+    font-size: 11px
+    line-height: 15px
+    margin-bottom: 10px
+    max-width: 100%
+
+.choosers__el.choosers__el-one
+  .choosers__el-items
+    align-items: center
+    display: flex
+    button 
+      width: aCalc(28)
+      height: aCalc(28)
+      border-radius: aCalc(28)
+      transition: .3s
+      border: 1px solid transparent 
+      position: relative
+      &.choosers__el_active
+        width: aCalc(56)
+        +r($sm)
+          width: 56px
+        span 
+          display: block
+      span 
+        position: absolute
+        width: 112%
+        height: 123%
+        border-radius: aCalc(32)
+        left: aCalc(-3)
+        top: aCalc(-3)
+        background-color: transparent 
+        border: 1px solid #006837 
+        display: none
+        +r($sm)
+          width: 110%
+          height: 122%
+          border-radius: 28px
+          left: -2.7px
+          top: -3px
+      +r($sm)
+        width: 28px
+        height: 28px
+        border-radius: 28px
+    button + button 
+      margin-left: aCalc(8)
+      +r($sm)
+        margin-left: 8px
+
+.choosers__el.choosers__el-two
+  .choosers__el-items
+    align-items: center
+    display: flex
+    button 
+      cursor: pointer
+      border: 1px solid #D5D5D5
+      padding: aCalc(10) aCalc(16)
+      width: aCalc(60)
+      height: aCalc(44)
+      border-radius: aCalc(8)
+      font-size: aCalc(16)
+      font-style: normal
+      font-weight: 400
+      line-height: aCalc(24)
+      transition: .3s
+      +r($sm)
+        width: 51px
+        height: 35px
+        border-radius: 8px
+        font-size: 11px
+        line-height: 15px
+      &.choosers__el_active
+        border: 1px solid #006837
+      &:hover
+        color: #006837
+    button + button 
+      margin-left: aCalc(8)
+      +r($sm)
+        margin-left: 8px

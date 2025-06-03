@@ -1,0 +1,253 @@
+.mini-gallery-block
+  .mini-gallery-block__item
+    // @extend .swiper-slide
+    position: relative
+    transition: filter 0.3s
+    +aProp(border-radius, 12)
+    +rmin($sm1)
+      display: block
+      width: 100%
+      height: 100%
+    +r($sm)
+      width: 100%
+      height: auto
+      border-radius: 12px
+      aspect-ratio: 1
+      // height: 100%
+      // height: auto
+    img, video
+      width: 100%
+      height: 100%
+      object-fit: cover
+      border-radius: inherit
+    .mini-gallery-block__subtitle
+      position: absolute
+      width: 100%
+      bottom: 0
+      height: max-content
+      padding: aCalc(32)
+      font-weight: 600
+      color: #fff
+      z-index: 4
+      +r($sm)
+        padding: 16px
+    .mini-gallery-block__badge
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+      display: flex
+      align-items: center
+      justify-content: center
+      background-color: #0007
+      +aProp(border-radius, 12)
+      +aProp(gap, 10)
+      color: #fff
+      z-index: 10
+      +r($sm)
+        border-radius: 12px
+        gap: 8px
+        flex-direction: column-reverse
+      svg
+        +aProp(width, 24)
+        height: auto
+        +r($sm)
+          width: 24px
+      // +r($sm)
+      //   display: none
+    &:hover
+      +rmin($sm1)
+        filter: brightness(0.9)
+
+
+    
+  .mini-gallery-block__wrapper
+    // @extend .swiper-wrapper
+    display: grid
+    +rmin($sm1)
+      +aProp(height, 742)
+      grid-template-columns: 1fr 0.5fr 0.5fr
+      grid-template-rows: 1fr 1fr
+      +aProp(gap, 20)
+      & > *:nth-child(1).mini-gallery-block__item
+        grid-area: 1 / 1 / -1 / 2
+      
+    +r($sm)
+      width: 100%
+      grid-template-columns: 0.5fr 0.5fr
+      grid-template-rows: auto max-content max-content
+      justify-items: center
+      gap: 7px
+      a
+        display: block
+      & > *:nth-child(1).mini-gallery-block__item
+        grid-area: 1 / 1 / 2 / 3
+        aspect-ratio: unset
+        height: 400px
+
+.modal-mini-gallery
+  display: grid
+  grid-template-columns: 1fr 1fr
+  +aProp(gap, 20)
+  +r($sm)
+    gap: 8px
+  .modal-mini-gallery__item
+    width: 100%
+    height: auto
+    aspect-ratio: 1.5
+    +aProp(border-radius, 12)
+    +r($sm)
+      border-radius: 12px
+    img, video
+      // display: none
+      width: 100%
+      height: 100%
+      object-fit: cover
+      +aProp(border-radius, 12)
+      +r($sm)
+        border-radius: 12px
+  & > div:nth-child(3n - 2).modal-mini-gallery__item
+    grid-area: auto/1/auto/3
+
+.fullscreen-slider._active
+  background-color: #F1EDEE
+
+.fullscreen-slider
+  background-color: #F1EDEE
+  position: fixed
+  top: 0
+  left: 0
+  padding: aCalc(96) 0
+  // padding: aCalc(40) 0 aCalc(96)
+  +wah(100%)
+  //
+  pointer-events: none
+  transform: translateY(100%)
+  visibility: hidden
+  // z-index: -1
+  z-index: 1000
+  transition: transform 0.3s, visibility 0s 0.31s, z-index 0s 0.31s 
+  grid-template-rows: 1fr auto
+  min-width: 0
+  +r($sm)
+    background-color: #ffffff
+    padding: 0
+  .fullscreen-slider__slider
+    z-index: 1
+    width: 100%
+    height: 100%
+    
+
+  .slider-pagination-navigation
+    +r($sm)
+      position: absolute
+      bottom: 82px
+      left: 0
+      right: 0
+      z-index: 202
+      max-width: max-content
+      width: 100%
+      margin: 0 auto
+      padding-bottom: 24px 
+      align-items: center
+      gap: 0
+      justify-content: center
+      text-align: center
+    .swiper-pagination
+      position: static
+      width: max-content
+      display: flex
+      flex-direction: column
+      align-items: center
+      display: none
+      +r($sm)
+        display: initial
+        //margin: 0 32px
+        margin: 0
+      .swiper-pagination-bullet
+        +r($sm)
+          margin: 0 16px
+          width: 4px
+          height: 4px
+          // +wah(4px)
+  .fullscreen-slider__wrapper
+    width: 100%
+    height: 100%
+  .fullscreen-slider__slide
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    overflow-y: hidden
+    +r($sm)
+      overflow: hidden
+    .swiper-zoom-container
+      min-height: 20%
+      height: 100%
+    img
+      width: 100%
+      height: auto
+      max-height: 100%
+      min-height: 150vh
+      object-fit: contain
+      
+  .fullscreen-slider__slide:not([style*='url'])
+    &:before
+      +r($sm)
+        display: none
+      
+  .fullscreen-slider__close
+    background-color: #ffffff
+    +aProp(border-radius, 12)
+    position: absolute
+    right: 0
+    padding: 8px
+    +aProp(margin-right, 40)
+    z-index: 2
+    cursor: pointer
+    +r($sm)
+      background-color: transparent
+      padding: 0
+      border-radius: 12px
+      margin-right: 16px
+      margin-top: 16px
+    svg
+      transition: transform .3s
+      path
+        fill: #000000
+      +aProp(width, 32)
+      height: auto
+      +r($sm)
+        width: 24px
+        height: 24px
+    &:hover 
+      svg 
+        transform: rotate(90deg)
+  &._active
+    visibility: visible
+    transition: transform 0.3s, visibility 0s 0s, z-index 0s 0s
+    transform: none
+    pointer-events: all
+    // z-index: map-get($zindex, modal) + 1
+  
+.swiper-pagination-bullet.swiper-pagination-bullet-active
+  background-color: #006837
+
+.slider-navigation-next.slide-button.slide-button_horizontal, .slider-navigation-prev.slide-button.slide-button_horizontal
+  display: block
+  +r($sm)
+    display: none
+
+.slider-navigation-prev.slide-button.slide-button_horizontal
+  position: absolute
+  z-index: 202
+  top: 50%
+  left: aCalc(260)
+
+.slider-navigation-next.slide-button.slide-button_horizontal
+  position: absolute
+  z-index: 202
+  top: 50%
+  transform: rotate(180deg)
+  right: aCalc(80)

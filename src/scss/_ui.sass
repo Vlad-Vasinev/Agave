@@ -1,0 +1,34 @@
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+div,
+span
+  //color: inherit
+  font-family: $baseFont
+  font-weight: inherit
+  margin: 0
+  // transition: color 0.2s linear
+
+div, span
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p
+    display: block
+
+p, li, div
+  @extend .h5
+
+@import "inputs"
+@import "slideButton"
+@import "mixins/gradient-safari-mixin"

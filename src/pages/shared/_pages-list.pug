@@ -1,0 +1,80 @@
+div
+
+  style.
+    .pl {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    font-size: 16px;
+    line-height: 20px;
+    width: 100%;
+    }
+    .pl .pl__trigger {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      bottom: 0;
+      left: 0;
+    }
+    .pl .pl__ctr {
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+      background-color: #fff;
+      display: none;
+    }
+    .pl._v .pl__ctr {
+      display: block;
+    }
+    .pl a {
+      display: block;
+      padding: 4px 8px;
+    }
+  .pl(title='список страниц')
+    .pl__trigger
+    .pl__ctr
+
+
+      a(href='index.html')
+        | Index 
+        b 
+          small (index-page)
+      a(href='catalog.html')
+        | Catalog 
+        b 
+          small (catalog-page)
+      a(href='product.html')
+        | Product 
+        b 
+          small (product-page)
+      a(href='ui-page.html')
+        | Ui-page 
+        b 
+          small (ui-page)
+  script.
+    (() => {
+    const pl = document.querySelector(".pl");
+    if (!pl) { return }
+    pl.querySelector('.pl__trigger').addEventListener('click', (e) => {
+      pl.classList.toggle('_v');
+    })
+    })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

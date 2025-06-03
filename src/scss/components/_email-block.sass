@@ -1,0 +1,33 @@
+
+.email-block
+  color: #0E0E0E
+  font-size: aCalc(16)
+  font-style: normal
+  line-height: normal
+  text-transform: uppercase
+  text-align: center
+  box-sizing: border-box
+  padding: aCalc(32) aCalc(20)
+  border-top: 1px solid #F0F0F0
+  border-bottom: 1px solid #F0F0F0
+  margin: 0 auto
+  margin-bottom: aCalc(120)
+  max-width: aCalc(1760)
+  width: 100%
+  +r($sm)
+    max-width: 100%
+    font-size: 11px
+    padding: 24px 10px
+  &.out-container 
+    display: none
+    +r($sm)
+      font-size: 11px
+      padding: 24px 10px
+      display: block
+  &.out-container.slide-button
+    .slide-button-inner span
+      +r($sm)
+        font-size: 11px
+        font-weight: 400
+        line-height: normal
+        display: block  

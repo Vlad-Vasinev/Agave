@@ -1,0 +1,18 @@
+
+.pagination-cell
+  width: aCalc(42)
+  height: aCalc(44)
+  display: grid
+  justify-content: center
+  align-items: center
+  border-radius: aCalc(8)
+  border: 1px solid transparent
+  transition: border-color .3s
+  +r($sm)
+    width: 33px
+    height: 33px
+    border-radius: 8px
+  &:hover 
+    border-color: #D5D5D5
+  &.pagination-cell_active
+    border-color: #006837

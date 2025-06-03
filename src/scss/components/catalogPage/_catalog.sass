@@ -1,0 +1,287 @@
+
+
+.catalog
+  padding-top: aCalc(165)
+  +r($sm)
+    padding-top: 130px
+  &__title
+    text-align: center
+    text-transform: uppercase
+    font-size: aCalc(32)
+    font-style: normal
+    font-weight: 400
+    line-height: aCalc(40)
+    margin-bottom: aCalc(40)
+    +r($sm)
+      font-size: 24px
+      line-height: 32px
+      margin-bottom: 16px
+  &__list 
+    width: 100%
+    display: grid
+    justify-content: center
+    grid-template-columns: repeat(4,1fr)
+    gap: aCalc(10) aCalc(10)
+    margin-bottom: aCalc(120)
+    .block-product
+      +r($sm) 
+        min-width: 176px
+        max-width: unset
+      .special__link
+        +r($sm) 
+          padding: 0
+      .special__link-info
+        +r($sm)
+          padding: 0 0 10px 10px
+      .special__link-img
+        max-width: unset
+        max-height: unset
+        width: aCalc(433)
+        height: aCalc(433)
+        +r($sm)
+          width: 100%
+          height: 100%
+        img 
+          width: 100%
+          height: aCalc(433)
+          +r($sm)
+            max-width: unset
+            width: 100%
+            height: 176px
+    +r($sm)
+      grid-gap: 8px
+      grid-template-columns: 195px 195px
+      margin-bottom: 40px
+    +r($ms + 7)
+      grid-template-columns: 174px 174px
+  &__el
+    cursor: pointer
+    border-radius: aCalc(12)
+    background-color: #F9F9F9
+    min-height: aCalc(650)
+    overflow: hidden
+    position: relative
+    &-bage 
+      position: absolute
+      left: aCalc(12)
+      top: aCalc(12)
+      z-index: 100
+      background-color: #1E1E1E
+      padding: aCalc(6) aCalc(12)
+      border-radius: aCalc(4)
+      min-width: aCalc(81)
+      font-size: aCalc(16)
+      line-height: aCalc(24)
+      color: #FFFFFF
+      +r($sm)
+        left: 6px
+        top: 6px
+        min-width: 56px
+        padding: 4px 8px
+        border-radius: 4px
+        font-size: 11px
+        line-height: 15px
+    +r($sm)
+      border-radius: 12px
+
+.catalog-img-secondary, .catalog-img-primary 
+  transition: all .3s linear
+  position: relative
+
+.catalog__el.catalog__el_ordinary
+  .catalog-img-primary 
+    margin-top: aCalc(109)
+    +r($sm)
+      margin-top: 0
+.catalog-img-primary
+  z-index: 1
+
+.catalog-img-secondary
+  opacity: 0
+  z-index: 0
+  transform: translateY(-100%)
+  +r($sm)
+    display: none
+    opacity: 0
+
+.catalog__el:hover
+  .catalog-img-primary
+    opacity: 0
+    +r($sm)
+      position: unset
+      opacity: 1
+  .catalog-img-secondary
+    opacity: 1
+    +r($sm)
+      position: absolute
+      opacity: 0
+
+.catalog__el.catalog__el_specialFirst .catalog__link-inner
+  width: 100%
+  overflow: hidden
+  .catalog__link-info 
+    +r($sm)
+      max-width: max-content
+  +r($sm)
+    max-width: max-content
+    max-width: unset
+    width: 100vw
+    height: 100%
+
+.catalog__el.catalog__el_specialLast .catalog__link-inner
+  width: 100%
+  overflow: hidden
+  +r($sm)
+    max-width: unset
+    width: 100%
+    height: 100%
+
+.catalog__el.catalog__el_ordinary .catalog__link-inner
+  display: grid
+  justify-content: center
+  align-content: center
+  max-height: aCalc(422)
+  margin: 0 auto
+  overflow: hidden
+  +r($sm)
+    margin: 0 auto 10px
+    max-height: 100%
+
+.catalog__el.catalog__el_ordinary .catalog__link
+  display: grid
+  justify-content: center
+  align-content: center
+  +r($sm)
+    align-content: center
+
+.catalog__el, .catalog__link
+  display: block
+  max-height: aCalc(650)
+  height: 100%
+  +r($sm)
+    padding: 0
+    min-height: 247px
+    max-height: 414px
+  &:hover 
+    .plusHover-btn
+      svg
+        path
+          fill: $UniversalGreen 
+
+.catalog__el.catalog__el_specialLast .catalog__link
+  +r($sm)
+    min-height: 414px
+
+.catalog__el img
+  +r($sm)
+    max-width: 176px
+    width: 100%
+    height: 176px
+    object-fit: cover
+
+.catalog__link-inner
+  pointer-events: none
+
+.catalog__link
+  position: relative
+  max-width: aCalc(866)
+  width: 100% !important
+  max-width: 100% !important
+  +r($sm)
+    max-width: 176px
+    width: 100%
+    display: block
+    justify-content: center
+    align-items: center
+
+.catalog__el.catalog__el_ordinary img
+  width: 100%
+  height: aCalc(422)
+  +r($sm)
+    max-width: 176px
+    width: 100%
+    height: 176px
+    object-fit: cover
+    object-fit: contain
+
+.catalog__el.catalog__el_specialFirst img
+  height: aCalc(650)
+  +r($sm)
+    height: 100%
+    max-width: unset
+    width: 100vw
+    object-fit: cover
+
+.catalog__el.catalog__el_specialLast img
+  height: aCalc(650)
+  width: 100%
+  +r($sm)
+    height: 100%
+    max-width: 359px
+    width: 100%
+    object-fit: contain
+
+.catalog__el.catalog__el_specialLast 
+  .catalog__link-info
+    +r($sm)
+      max-width: max-content
+
+.catalog__link img
+  pointer-events: none
+  object-fit: contain
+  width: 100%
+
+.catalog__link-info
+  min-width: aCalc(212)
+  position: absolute
+  z-index: 3
+  bottom: aCalc(20)
+  left: aCalc(20)
+  right: aCalc(20)
+  pointer-events: none
+  +r($sm)
+    max-width: 156px
+    width: 100%
+    max-width: max-content
+    bottom: 10px
+    left: 10px
+    right: 10px
+  .catalog__link-title.secondary-title-h3
+    overflow: hidden !important
+    -o-text-overflow: ellipsis !important
+    text-overflow: ellipsis !important
+    display: -webkit-box !important
+    -webkit-line-clamp: 2
+    -webkit-box-orient: vertical
+  .catalog__link-price.secondary-title-h3
+    overflow: hidden !important
+    -o-text-overflow: ellipsis !important
+    text-overflow: ellipsis !important
+    display: -webkit-box !important
+    -webkit-line-clamp: 1
+    -webkit-box-orient: vertical
+.catalog__link-title
+  margin-bottom: aCalc(10)
+  pointer-events: none
+
+.catalog__link-price
+  pointer-events: none
+
+.email-block.catalog-email
+  margin-bottom: aCalc(120)
+
+.catalog__el.catalog__el_specialFirst
+  grid-column: span 2
+  +r($sm)
+    min-height: 414px
+    grid-column: span 2
+  .catalog__link
+    +r($sm)
+      min-height: 414px !important
+.catalog__el.catalog__el_specialLast
+  grid-column-start: 3
+  grid-column-end: 5
+  +r($sm)
+    grid-column-start: initial
+    grid-column-end: initial
+    grid-column: span 2

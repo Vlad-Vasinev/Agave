@@ -1,0 +1,178 @@
+
+.header
+  max-width: aCalc(1920)
+  margin: 0 auto
+  padding: 0 aCalc(80)
+  position: relative
+  color: var(--headerColor,#ffffff)
+  +r($sm)
+    display: none
+  &-active 
+    position: fixed
+    z-index: 250
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    width: 100vw
+    animation-name: height-animate
+    animation-duration: 0.9s
+    -o-animation-fill-mode: forwards
+    height: 100vh
+    background-color: gray
+    background-color: rgba(128, 128, 128, 0.5)
+  &__menu 
+    display: flex
+    padding: aCalc(16) aCalc(30) aCalc(14) aCalc(24)
+    justify-content: space-between
+    align-items: flex-start
+    position: fixed
+    top: 0
+    z-index: 200
+    left: 0
+    right: 0
+    margin: aCalc(8) 0 0
+    border-top-left-radius: aCalc(40)
+    border-top-right-radius: aCalc(40)
+    &.header-menu_active 
+      .header__el
+      .animate-symbols__el 
+        background-color: #000000 !important
+    &::before
+      content: ''
+      display: none
+      position: absolute
+      z-index: 0
+      top: 0
+      left: 0
+      width: 100%
+      border-top-left-radius: aCalc(40)
+      border-top-right-radius: aCalc(40) 
+      border-bottom-right-radius: aCalc(40)
+      border-bottom-left-radius: aCalc(40)
+      height: calc(100% + var(--infoElHeight))
+      transition: height 0.25s, min-height 0.3s
+      transition: all .4s
+    div 
+      transition: all .3s
+
+
+@keyframes height-animate
+  0%
+    background-color: transparent
+  100%
+    background-color: rgba(128, 128, 128, 0.5)
+
+.header__el-fl 
+  display: flex
+  justify-content: flex-start
+  gap: aCalc(40)
+
+.header__el
+  &.header__el_cl
+    color: #000000
+
+.header__el:not(.header__el-logo)
+  font-size: aCalc(16)
+  font-style: normal
+  font-weight: 700
+  line-height: aCalc(16)
+  text-transform: uppercase
+  cursor: pointer
+  position: relative
+  &:hover
+    color: $UniversalGreen 
+  &.header-drop_animate
+    &:hover
+      color: $White
+
+.header__el-logo
+  position: relative
+  z-index: 250
+  margin: 0 aCalc(38)
+  img 
+    widht: aCalc(60)
+    height: aCalc(90)
+
+.header__el.header-drop_animate
+  padding-left: aCalc(58)
+  position: relative
+  transform: translateX(88%)
+  .animate-symbols
+    transform: rotate(90deg)
+    left: aCalc(27)
+    position: absolute
+    display: grid
+    justify-content: center
+    align-items: center 
+    width: aCalc(24)
+    height: aCalc(24)
+    top: aCalc(-3)
+    .animate-symbols__first, .animate-symbols__last
+      transition: all .3s
+      &.animate-symbols__bl 
+        background-color: #000000
+    &__el
+      border-radius: aCalc(3)
+      width: aCalc(6)
+      height: aCalc(6)
+      background-color: var(--headerColor, #ffffff)
+  &:hover
+    .animate-symbols
+      .animate-symbols__first
+        position: relative
+        transform: translateY(100%) translateX(100%)
+        &.animate-symbols__bl 
+          background-color: #ffffff
+      .animate-symbols__last
+        position: relative
+        transform: translateY(-100%) translateX(-100%)
+        &.animate-symbols__bl 
+          background-color: #ffffff
+
+@keyframes visibility-animation
+  0%
+    height: 0
+    opacity: 0
+    visibility: hidden
+  100%
+    height: auto
+    opacity: 1
+    visibility: visible
+
+@keyframes visibility-animate
+  0%
+    height: 0
+  100%
+    height: auto
+
+.header__info_active
+  visibility: visible
+
+.header__info-link
+  max-width: max-content
+  margin: 0 auto
+  color: $White 
+  margin: 0
+  span 
+    text-align: left
+    color: $White 
+    font-weight: 700
+  &.h4-small
+    text-transform: uppercase
+    +r($sm)
+      font-size: 24px
+      font-size: 32px
+      text-transform: none
+      color: $Black
+
+.header__info-link + .header__info-link
+  padding-top: aCalc(6)
+
+.header-drop.header__info-map
+  display: flex
+  justify-content: center
+  align-items: top
+
+.menu__link-sublink.header__sale-button.slide-button_icon.slide-button.header__menu-item_mobile span
+  font-size: aCalc(12)

@@ -1,0 +1,225 @@
+
+section
+  .primary-content
+    .ordinary-slider.swiper-container
+      .ordinary-slider__content.swiper-wrapper
+        .ordinary-slider__el.ordinary-slider__first.swiper-slide.ordinary-slider__el_bg-black
+          <video class="video__el video__el-main" data-idBig = "0" loop autoplay="autoplay" muted playsinline webkit-playsinline preload="auto" poster="img/agava-preview.jpg">
+            <source src="img/video/agava.mp4" type="video/mp4">
+            <source src="img/video/agava.webm" type="video/webm">
+          </video>
+          .movable-title.movable-title_first agava – PARTNER
+          .movable-title.movable-title_second IN THE WORLD OF COFFEE
+          button.move-next 
+            <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 8L9 16M9 16L17 8M9 16V0" stroke="#F2F2F2"/>
+            </svg>
+        - var slide = 0
+        while slide < 1
+          .ordinary-slider__el.swiper-slide.ordinary-slider__el_bg-white
+            .full-product.swiper-container
+              .full-product__info 
+                .h1 An indispensable accessory
+                .h4
+                  |An indispensable accessory for making coffee.
+                  |Tempering allows you to get rid of channels and form
+                  |a tablet of uniform density.
+                a(href="#").h5-bold to the catalog
+              .full-product__content.swiper-wrapper 
+                - var imgArr = ["img/full-slider-1.jpg", "img/full-slider-2.jpg", "img/full-slider-3.jpg", "img/full-slider-4.jpg"]
+                - var imgArrSmall = ["img/full-mob-1.jpg", "img/full-mob-2.jpg", "img/full-mob-3.jpg", "img/full-mob-4.jpg"]
+                - var h1Arr = ["АКСЕССУАРЫ ДЛЯ БАРИСТА", "АКСЕССУАРЫ ДЛЯ не не БАРИСТА", "АКСЕССУАРЫ ДЛЯ тракториста", "АКСЕССУАРЫ ДЛЯ ненене тракториста"]
+                - var priceArr = ["1 800 ₽", "1000 ₽", "10 ₽", "180 000 ₽"]
+                - var slide = 0
+                while slide < 4
+                  .full-product__el.swiper-slide(js-lazy)
+                    .full-product__title
+                      .h5-bold
+                        |Pitcher Agave Black <br>
+                        |for milk 350 ml.
+                      span.h5-bold=priceArr[slide]
+                    picture
+                      source(media="(min-width:768px)" srcset=imgArr[slide])
+                      source(media="(max-width:768px)" srcset=imgArrSmall[slide])
+                      img(src=imgArr[slide] alt="")
+                  -slide++
+              .slider-navigation
+                .swiper-pagination.slider-navigation__pagination
+                .slider-navigation__prev
+                  .slider-navigation-prev.slide-button.slide-button_horizontal
+                    span 
+                      <svg width="58" height="37" viewBox="0 0 58 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M58 18.5L2 18.5M2 18.5L19.5 1M2 18.5L19.5 36" stroke="black" stroke-width="1.5"/>
+                      </svg>
+                .slider-navigation__next
+                  .slider-navigation-next.slide-button.slide-button_horizontal
+                    span 
+                      <svg width="58" height="37" viewBox="0 0 58 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M58 18.5L2 18.5M2 18.5L19.5 1M2 18.5L19.5 36" stroke="black" stroke-width="1.5"/>
+                      </svg>
+          - slide++ 
+          .ordinary-slider__el.swiper-slide.ordinary-slider__el_bg-white
+            .full-product.swiper-container
+              .full-product__info 
+                .h1 An indispensable accessory 11
+                .h4
+                  |An indispensable accessory for making coffee.
+                  |Tempering allows you to get rid of channels and form
+                  |a tablet of uniform density.
+                a(href="#").h5-bold to the catalog
+              .full-product__content.swiper-wrapper 
+                - var imgArr = ["img/full-slider-2.jpg", "img/full-slider-3.jpg", "img/full-slider-4.jpg", "img/full-slider-1.jpg"]
+                - var imgArrSmall = ["img/full-mob-2.jpg", "img/full-mob-3.jpg", "img/full-mob-4.jpg", "img/full-mob-1.jpg"]
+                - var h1Arr = ["АКСЕССУАРЫ ДЛЯ БАРИСТА", "АКСЕССУАРЫ ДЛЯ не не БАРИСТА", "АКСЕССУАРЫ ДЛЯ тракториста", "АКСЕССУАРЫ ДЛЯ ненене тракториста"]
+                - var priceArr = ["1 800 ₽", "1000 ₽", "10 ₽", "180 000 ₽"]
+                - var slide = 0
+                while slide < 4
+                  .full-product__el.swiper-slide(js-lazy)
+                    .full-product__title
+                      .h5-bold
+                        |Pitcher Agave Black <br>
+                        |for milk 350 ml.
+                      span.h5-bold=priceArr[slide]
+                    picture
+                      source(media="(min-width:768px)" srcset=imgArr[slide])
+                      source(media="(max-width:768px)" srcset=imgArrSmall[slide])
+                      img(src=imgArr[slide] alt="")
+                  -slide++
+              .slider-navigation
+                .swiper-pagination.slider-navigation__pagination
+                .slider-navigation__prev
+                  .slider-navigation-prev.slide-button.slide-button_horizontal
+                    span 
+                      <svg width="58" height="37" viewBox="0 0 58 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M58 18.5L2 18.5M2 18.5L19.5 1M2 18.5L19.5 36" stroke="black" stroke-width="1.5"/>
+                      </svg>
+                .slider-navigation__next
+                  .slider-navigation-next.slide-button.slide-button_horizontal
+                    span 
+                      <svg width="58" height="37" viewBox="0 0 58 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M58 18.5L2 18.5M2 18.5L19.5 1M2 18.5L19.5 36" stroke="black" stroke-width="1.5"/>
+                      </svg>
+        .ordinary-slider__el.swiper-slide.ordinary-slider__el_bg-white
+          .full-product__info 
+            .h1 An indispensable accessory 44
+            .h4
+              |An indispensable accessory for making coffee.
+              |Tempering allows you to get rid of channels and form
+              |a tablet of uniform density.
+            a(href="#").h5-bold to the catalog
+          .full-product.swiper-container
+            .full-product__content.swiper-wrapper 
+              - var imgArr = ["img/full-slider-4.jpg", "img/full-slider-3.jpg", "img/full-slider-2.jpg", "img/full-slider-1.jpg"]
+              - var imgArrSmall = ["img/full-mob-4.jpg", "img/full-mob-3.jpg", "img/full-mob-2.jpg", "img/full-mob-1.jpg"]
+              - var h1Arr = ["АКСЕССУАРЫ ДЛЯ БАРИСТА", "АКСЕССУАРЫ ДЛЯ не не БАРИСТА", "АКСЕССУАРЫ ДЛЯ тракториста", "АКСЕССУАРЫ ДЛЯ ненене тракториста"]
+              - var priceArr = ["1 800 ₽", "1000 ₽", "10 ₽", "180 000 ₽"]
+              - var slide = 0
+              while slide < 4
+                .full-product__el.swiper-slide(js-lazy)
+                  .full-product__title
+                    .h5-bold
+                      |Pitcher Agave Black <br>
+                      |for milk 350 ml.
+                    span.h5-bold=priceArr[slide]
+                  picture
+                    source(media="(min-width:768px)" srcset=imgArr[slide])
+                    source(media="(max-width:768px)" srcset=imgArrSmall[slide])
+                    img(src=imgArr[slide] alt="")
+                -slide++
+            .slider-navigation
+              .swiper-pagination.slider-navigation__pagination
+              .slider-navigation__prev
+                .slider-navigation-prev.slide-button.slide-button_horizontal
+                  span 
+                    <svg width="58" height="37" viewBox="0 0 58 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M58 18.5L2 18.5M2 18.5L19.5 1M2 18.5L19.5 36" stroke="black" stroke-width="1.5"/>
+                    </svg>
+              .slider-navigation__next
+                .slider-navigation-next.slide-button.slide-button_horizontal
+                  span 
+                    <svg width="58" height="37" viewBox="0 0 58 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M58 18.5L2 18.5M2 18.5L19.5 1M2 18.5L19.5 36" stroke="black" stroke-width="1.5"/>
+                    </svg>
+        .ordinary-slider__el.swiper-slide.ordinary-slider__el_bg-white
+          .full-product.swiper-container
+            .full-product__info 
+              .h1 An indispensable accessory 22
+              .h4
+                |An indispensable accessory for making coffee.
+                |Tempering allows you to get rid of channels and form
+                |a tablet of uniform density.
+              a(href="#").h5-bold to the catalog
+            .full-product__content.swiper-wrapper 
+              - var imgArr = ["img/full-slider-y.jpg", "img/full-slider-x.jpg", "img/full-slider-y.jpg", "img/full-slider-x.jpg"]
+              - var imgArrSmall = ["img/full-slider-y.jpg", "img/full-slider-x.jpg", "img/full-slider-y.jpg", "img/full-slider-x.jpg"]
+              - var h1Arr = ["АКСЕССУАРЫ ДЛЯ БАРИСТА", "АКСЕССУАРЫ ДЛЯ не не БАРИСТА", "АКСЕССУАРЫ ДЛЯ тракториста", "АКСЕССУАРЫ ДЛЯ ненене тракториста"]
+              - var priceArr = ["1 800 ₽", "1000 ₽", "10 ₽", "180 000 ₽"]
+              - var slide = 0
+              while slide < 4
+                .full-product__el.swiper-slide(js-lazy)
+                  .full-product__title
+                    .h5-bold
+                      |Pitcher Agave Black <br>
+                      |for milk 350 ml.
+                    span.h5-bold=priceArr[slide]
+                  picture
+                    source(media="(min-width:768px)" srcset=imgArr[slide])
+                    source(media="(max-width:768px)" srcset=imgArrSmall[slide])
+                    img(src=imgArr[slide] alt="")
+                -slide++
+            .slider-navigation
+              .swiper-pagination.slider-navigation__pagination
+              .slider-navigation__prev
+                .slider-navigation-prev.slide-button.slide-button_horizontal
+                  span 
+                    <svg width="58" height="37" viewBox="0 0 58 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M58 18.5L2 18.5M2 18.5L19.5 1M2 18.5L19.5 36" stroke="black" stroke-width="1.5"/>
+                    </svg>
+              .slider-navigation__next
+                .slider-navigation-next.slide-button.slide-button_horizontal
+                  span 
+                    <svg width="58" height="37" viewBox="0 0 58 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M58 18.5L2 18.5M2 18.5L19.5 1M2 18.5L19.5 36" stroke="black" stroke-width="1.5"/>
+                    </svg>
+        .ordinary-slider__el.swiper-slide.ordinary-slider__el_bg-white
+          .full-product.swiper-container
+            .full-product__info 
+              .h1 An indispensable accessory 55
+              .h4
+                |An indispensable accessory for making coffee.
+                |Tempering allows you to get rid of channels and form
+                |a tablet of uniform density.
+              a(href="#").h5-bold to the catalog
+            .full-product__content.swiper-wrapper
+              - var imgArr = ["img/full-slider-x.jpg", "img/full-slider-y.jpg", "img/full-slider-x.jpg", "img/full-slider-y.jpg"]
+              - var imgArrSmall = ["img/full-mob-4.jpg", "img/full-mob-2.jpg", "img/full-mob-4.jpg", "img/full-mob-2.jpg"]
+              - var h1Arr = ["АКСЕССУАРЫ ДЛЯ БАРИСТА", "АКСЕССУАРЫ ДЛЯ не не БАРИСТА", "АКСЕССУАРЫ ДЛЯ тракториста", "АКСЕССУАРЫ ДЛЯ ненене тракториста"]
+              - var priceArr = ["1 800 ₽", "1000 ₽", "10 ₽", "180 000 ₽"]
+              - var slide = 0
+              while slide < 4
+                .full-product__el.swiper-slide(js-lazy)
+                  .full-product__title
+                    .h5-bold
+                      |Pitcher Agave Black <br>
+                      |for milk 350 ml.
+                    span.h5-bold=priceArr[slide]
+                  picture
+                    source(media="(min-width:768px)" srcset=imgArr[slide])
+                    source(media="(max-width:768px)" srcset=imgArrSmall[slide])
+                    img(src=imgArr[slide] alt="")
+                -slide++
+            .slider-navigation
+              .swiper-pagination.slider-navigation__pagination
+              .slider-navigation__prev
+                .slider-navigation-prev.slide-button.slide-button_horizontal
+                  span 
+                    <svg width="58" height="37" viewBox="0 0 58 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M58 18.5L2 18.5M2 18.5L19.5 1M2 18.5L19.5 36" stroke="black" stroke-width="1.5"/>
+                    </svg>
+              .slider-navigation__next
+                .slider-navigation-next.slide-button.slide-button_horizontal
+                  span 
+                    <svg width="58" height="37" viewBox="0 0 58 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M58 18.5L2 18.5M2 18.5L19.5 1M2 18.5L19.5 36" stroke="black" stroke-width="1.5"/>
+                    </svg>
+      .swiper-pagination.ordinary-pagination

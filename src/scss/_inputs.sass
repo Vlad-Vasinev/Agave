@@ -1,0 +1,95 @@
+/* UI */
+
+// input
+
+input, textarea
+  font-family: $baseFont
+  border-radius: 0
+
+.grecaptcha-badge
+  display: none !important
+
+.ui-input, .ui-input-select
+  position: relative
+  +aProp(height, 58)
+  +aProp(margin-bottom, 32)
+
+  +r($sm)
+    height: 56px
+    margin-bottom: 32px
+  &__float-label
+    @extend .h5
+    position: absolute
+    +aProp(left, 16)
+    +aProp(top, 18)
+    pointer-events: none
+    color: #828282
+    transition: 0.25s ease
+    +r($sm)
+      top: 18px
+      left: 16px
+    span.required
+      color: #f45b63
+
+  input, textarea, .textarea[contenteditable]
+    +aProp(font-size, 16)
+    +aProp(line-height, 24)
+    -webkit-appearance: none
+    display: block
+    width: 100%
+    height: 100%
+    background-color: $Gray
+    box-shadow: none
+    color: inherit
+
+    padding: aCalc(27) aCalc(16) aCalc(9)
+
+    border: 1px solid #BDBDBD00
+    +aProp(border-radius, 8)
+    transition: 0.25s ease
+    +r($sm)
+      font-size: 14px
+      line-height: 20px
+      border-radius: 8px
+      padding: 27px 16px 9px
+
+    &::placeholder
+      color: inherit
+    &.has-error
+      border-color: #FA8190
+    &.is-valid
+      //border-color: #5ad321
+    &:hover
+      border-color: #BDBDBDff
+  .ui-input__error, &.is-focused .ui-input__float-label
+    +aProp(font-size, 14)
+    +aProp(line-height, 18)
+    +r($sm1)
+      font-size: 12px
+      line-height: 16px
+  .ui-input__error
+    font-weight: 500
+    color: #fd566b
+    position: absolute
+    +aProp(margin-top, 8)
+    +r($sm)
+      margin-top: 6px
+
+  &.is-focused
+    input, textarea, .textarea[contenteditable]
+      background-color: #fff
+      color: #202020
+      border-color: #BDBDBDff
+    .ui-input__float-label
+      +aProp(top, 9)
+      color: #4F4F4F
+      opacity: 0.5
+      +r($sm)
+        top: 9px
+
+.inputs-container-inline
+  display: flex
+  flex-wrap: nowrap
+  gap: 17px
+  .ui-input
+    flex: 0 3 auto

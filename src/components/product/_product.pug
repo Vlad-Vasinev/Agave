@@ -1,0 +1,147 @@
+
+section.product
+  .product__description-popup.popup-text
+    .fullscreen-slider__close.product__description-close(fs-close)
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5.63599 18.364L18.3639 5.63603M5.63599 5.63604L18.3639 18.364" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    .content 
+  .product__description-bg
+
+  .product__inner
+    .product__slider.slider-desktop.swiper
+      ul.product__content.swiper-wrapper(data-fs-ctr)
+        li.product__el.swiper-slide(data-fs-full="img/product-0.png")
+          <video loop muted playsinline webkit-playsinline autoplay preload="auto" poster="img/product-0.png">
+              <source src="img/video/product-1.webm" type="video/webm">
+              <source src="img/video/product-1.mp4" type="video/mp4">
+          </video>
+        li.product__el.swiper-slide(data-fs-full="img/product-1.png" js-lazy)
+          <img src="img/product-1.png" alt="Agave image 1">
+        li.product__el.swiper-slide(data-fs-full="img/product-2.png" js-lazy)
+          <img src="img/product-2.png" alt="Agave image 1">
+        li.product__el.swiper-slide(data-fs-full="img/product-3.png" js-lazy) 
+          <img src="img/product-3.png" alt="Agave image 1">
+        li.product__el.swiper-slide(data-fs-full="img/product-4.png" js-lazy)
+          <img src="img/product-4.png" alt="Agave image 1">
+        li.product__el.swiper-slide(data-fs-full="img/product-5.png" js-lazy)
+          <img src="img/product-5.png" alt="Agave image 1">
+        li.product__el.swiper-slide(data-fs-full="img/product-5.png" js-lazy)
+          <img src="img/product-5.png" alt="Agave image 1">
+        li.product__el.swiper-slide(data-fs-full="img/product-5.png" js-lazy)
+          <img src="img/product-5.png" alt="Agave image 1">
+      .swiper-pagination
+    .product__block.product__block_active
+      .product__price   
+        h2.product__price-title.primary-title-h2 Agave Coffee Grinder
+          span.product__price-subtitle.primary-title-h3 A smart assistant that will brew your coffee itself
+        .choosers 
+          .choosers__el.choosers__el-one
+            .choosers__el-title Color:
+            .choosers__el-items 
+              button.choosers__el_active(style="background-color: #EEEFF1" data-id='0') 
+                span
+              button(style="background-color: #F9E3CC" data-id="1")
+                span
+              button(style="background-color: #373738" data-id="2") 
+                span
+              button(style="background-color: #6B557E" data-id="3") 
+                span
+              button(style="background-color: #2B447E" data-id="4") 
+                span
+          .choosers__el.choosers__el-two
+            .choosers__el-title volume, ml:
+            .choosers__el-items 
+              button(data-id="0").choosers__el_active 100
+              button(data-id="1") 150
+              button(data-id="2") 300
+              button(data-id="3") 600
+              button(data-id="4") 650
+              button(data-id="3") 600
+        .product__price-block
+          a.product__price-numb
+            |7 500 
+            span ₽
+          a.slide-button_icon.slide-button.first-shop(href="/catalog")
+            span 
+              span Ozon
+          a.slide-button_icon.slide-button.second-shop(href="/catalog")
+            span 
+              span Market
+      .product__description
+        h2.product__description-title.secondary-title-h2.preview-content Description
+        p.product__description-text.primary-text-p.restrict-height.preview-content.preview-content_hide
+          |activated by a light press of the handle. The model has received 4 international design awards.
+          |activated by a light press of the handle. The model has received 4 international design awards. |activated by a light press of the handle. The model has received 4 international design awards.
+          |activated by a light press of the handle. The model has received 4 international design awards.
+          |activated by a light press of the handle. The model has received 4 international design awards.
+          |activated by a light press of the handle. The model has received 4 international design awards.
+          |activated by a light press of the handle. The model has received 4 international design awards.
+          |activated by a light press of the handle. The model has received 4 international design awards.
+          |activated by a light press of the handle. The model has received 4 international design awards.
+          |activated by a light press of the handle. The model has received 4 international design awards.
+          |activated by a light press of the handle. The model has received 4 international design awards.
+          |activated by a light press of the handle. The model has received 4 international design awards.
+          |activated by a light press of the handle. The model has received 4 international design awards.
+      button.product__description-more(data-descr-id=0) Read the description
+      .product__properties
+        h2.product__properties-title.secondary-title-h2.preview-content  No characteristics
+        ul.product__properties-list.preview-content.restrict-height
+          li.product__properties-el.preview-content_hide
+            .product__properties-property.primary-text-p Power
+            .product__properties-value.primary-text-p 1300–1600 rdr Вт
+          li.product__properties-el.preview-content_hide 
+            .product__properties-property.primary-text-p Warranty period
+            .product__properties-value.primary-text-p 1 год
+          li.product__properties-el.preview-content_hide 
+            .product__properties-property.primary-text-p Warranty period
+            .product__properties-value.primary-text-p 2 год
+          li.product__properties-el.preview-content_hide 
+            .product__properties-property.primary-text-p Warranty period
+            .product__properties-value.primary-text-p 3 год
+          li.product__properties-el.preview-content_hide 
+            .product__properties-property.primary-text-p Warranty period
+            .product__properties-value.primary-text-p 4 год
+        ul.product__properties-list 
+          li.product__properties-el.preview-content_hide 
+            .product__properties-property Power
+            .product__properties-value 13000–16000 Вт
+          li.product__properties-el.preview-content_hide
+            .product__properties-property Pressure
+            .product__properties-value 15 бар
+      button.product__description-more(data-descr-id=1) All characteristics
+.container
+  section.special 
+    h2.special__title.primary-title-h2 Especially for you
+    .special-wrapper.swiper-container.product-special
+      ul.special__list.swiper-wrapper
+        - var slide = 0
+        while slide < 4
+          .block-product.plusHover-inner.swiper-slide
+            button.plusHover-btn 
+              <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1880_50)">
+                <mask id="mask0_1880_50" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="25" height="25">
+                <path d="M25 0H0V25H25V0Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask0_1880_50)">
+                <path d="M13 0H12V25H13V0Z" fill="black"/>
+                <path d="M25 13V12L0 12V13L25 13Z" fill="black"/>
+                </g>
+                </g>
+                <defs>
+                <clipPath id="clip0_1880_50">
+                <rect width="25" height="25" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            a.special__link(href="#") 
+              .special__link-img(js-lazy)
+                img(src="img/special-img-3.png" alt="Agave REDMOND SkyKettle G203S")
+              .special__link-info 
+                h3.special__link-title.secondary-title-h3 Smart kettle-lamp <br> REDMOND SkyKettle G203S
+                .special__link-price.secondary-title-h3 7 500 ₽
+          -slide++
+a.email-block.header__sale-button.slide-button_icon.slide-button.header__menu-item_mobile(href='#' mailto="info@agave-coffee.online")
+  span 
+    span info@agave-coffee.online

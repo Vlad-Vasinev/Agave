@@ -1,0 +1,144 @@
+
+.special
+  &__list
+    display: flex
+    margin-bottom: aCalc(138)
+    +r($sm)
+      margin-bottom: 80px
+      max-width: 100%
+      overflow: initial
+  &__title
+    margin-bottom: aCalc(30)
+    +r($sm)
+      margin-bottom: 16px
+  &-wrapper
+    overflow: hidden
+  &__item 
+    padding-top: aCalc(40)
+    position: relative
+    max-width: aCalc(433)
+    width: 100%
+    box-sizing: border-box
+    background-color: #F9F9F9
+    z-index: 1
+    flex-shrink: 0
+    border-radius: aCalc(12)
+    +r($sm)
+      min-width: 228px
+      border-radius: 12px
+      overflow: hidden
+    .special__link 
+      min-height: aCalc(610)
+      display: flex
+      flex-flow: column
+      justify-content: space-between
+      +r($sm)
+        min-height: 250px
+        padding: 10px
+        height: 100%
+  &__link-title
+    margin-bottom: aCalc(10)
+    overflow: hidden !important
+    -o-text-overflow: ellipsis !important
+    text-overflow: ellipsis !important
+    display: -webkit-box !important
+    -webkit-line-clamp: 2
+    -webkit-box-orient: vertical
+    +r($sm)
+      margin-bottom: 6px
+  &__link-price
+    overflow: hidden !important
+    -o-text-overflow: ellipsis !important
+    text-overflow: ellipsis !important
+    display: -webkit-box !important
+    -webkit-line-clamp: 1
+    -webkit-box-orient: vertical
+  &__link-info
+    padding: 0 aCalc(20) aCalc(20) aCalc(20)
+  &__link-img
+    margin-bottom: aCalc(33)
+    margin: 0 auto
+    max-width: aCalc(433)
+    width: 100%
+    max-height: aCalc(433)
+    +r($sm)
+      max-width: 100%
+      max-height: 100%
+    img 
+      object-fit: cover
+      max-width: aCalc(433)
+      width: 100%
+      +r($sm)
+        height: 220px
+        max-width: 220px
+        object-fit: cover
+
+.special__item + .special__item
+  margin-left: aCalc(7)
+  +r($sm)
+    margin-left: 7px
+
+.block-product
+  position: relative
+  max-width: aCalc(433)
+  width: 100%
+  box-sizing: border-box
+  background-color: #F9F9F9
+  z-index: 1
+  flex-shrink: 0
+  border-radius: aCalc(12)
+  +r($sm)
+    min-width: 176px
+    border-radius: 12px
+    overflow: hidden
+  &:hover 
+    .plusHover-btn svg 
+      path 
+        fill: green
+  .special__link 
+    min-height: aCalc(650)
+    display: flex
+    flex-flow: column
+    justify-content: space-between
+    +r($sm)
+      min-height: 247px
+      padding: 0
+      height: 100%
+  .special__link-title
+  margin-bottom: aCalc(10)
+  +r($sm)
+    margin-bottom: 6px
+  .special__link-info
+    position: absolute
+    bottom: 0
+    padding: 0 aCalc(20) aCalc(20) aCalc(20)
+    z-index: 3
+    +r($sm)
+      padding: 0 0 10px 10px
+  .special__link-img
+    margin-bottom: aCalc(33)
+    flex-grow: 3
+    max-height: 100%
+    width: 100%
+    display: grid
+    align-items: center
+    margin: 0 auto aCalc(6)
+    max-width: aCalc(433)
+    +r($sm)
+      display: block
+      max-width: 100%
+      max-height: 100%
+      margin: 0 auto 0
+  .special__link-img img
+    object-fit: cover
+    max-width: aCalc(433)
+    width: 100%
+    +r($sm)
+      height: 176px
+      max-width: 176px
+      object-fit: cover
+
+.block-product + .block-product
+  margin-left: aCalc(7)
+  +r($sm)
+    margin-left: 7px

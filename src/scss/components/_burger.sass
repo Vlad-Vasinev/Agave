@@ -1,0 +1,160 @@
+
+
+.click-wrapper
+  cursor: pointer
+  width: 24px
+  .menu, .menu:before, .menu:after
+    background-color: #000000
+  .close.animate:before, .close.animate:after
+    background-color: #000000
+  &__main 
+    .menu, .menu:before, .menu:after
+      background-color: var(--headerColor)
+    .close.animate:before, .close.animate:after
+      background-color: #000000
+
+/* menu start
+
+.menu
+  position: absolute
+  background-color: var(--headerColor)
+  width: 24px
+  height: 2px
+  &.animate
+    animation-name: menu-menu
+    animation-duration: 0.3s
+    &:after 
+      animation-name: menu-after
+      animation-duration: 0.3s
+    &:before 
+      animation-name: menu-before
+      animation-duration: 0.3s
+  &:after 
+    content: ""
+    position: absolute
+    background-color: var(--headerColor)
+    width: 24px
+    height: 2px
+    margin-top: -9px
+  &:before 
+    content: ""
+    position: absolute
+    background-color: var(--headerColor)
+    width: 24px
+    height: 2px
+    margin-top: 9px
+
+@keyframes menu-menu
+  0%
+    width: 0px
+    height: 0px
+
+  50%
+    width: 0px
+    height: 0px
+
+  51%
+    position: absolute
+    background-color: var(--headerColor)
+    width: 24px
+    height: 2px
+
+@keyframes menu-after
+  0%
+    transform: rotate(-45deg)
+    margin-top: 0px
+
+  50%
+    transform: rotate(0deg)
+    margin-top: 0px
+
+  100%
+    transform: rotate(0deg)
+    margin-top: -9px
+
+@keyframes menu-before
+  0%
+    transform: rotate(45deg)
+    margin-top: 0px
+
+  50%
+    transform: rotate(0deg)
+    margin-top: 0px
+
+  100%
+    transform: rotate(0deg)
+    margin-top: 9px
+
+/* menu end
+
+/* close start
+
+.close
+  position: absolute
+  margin-left: 0
+  &.animate
+    animation-name: close-close
+    animation-duration: 0.3s
+    &:after 
+      animation-name: close-after
+      animation-duration: 0.3s
+    &:before 
+      animation-name: close-before
+      animation-duration: 0.3s
+  &:after
+    content: ""
+    position: absolute
+    background-color: var(--headerColor)
+    width: 24px
+    height: 2px
+    transform: rotate(45deg)
+  &:before 
+    content: ""
+    position: absolute
+    background-color: var(--headerColor)
+    width: 24px
+    height: 2px
+    transform: rotate(-45deg)
+
+@keyframes close-close
+  0%
+    position: absolute
+    background-color: var(--headerColor)
+    width: 24px
+    height: 2px
+    margin-top: 9px
+
+  50%
+    display: none
+    width: 24px
+    height: 2px
+
+  100%
+    width: 0px
+    height: 0px
+
+@keyframes close-after
+  0%
+    transform: rotate(0deg)
+    margin-top: 9px
+
+  50%
+    transform: rotate(0deg)
+    margin-top: 0px
+
+  100%
+    transform: rotate(45deg)
+
+@keyframes close-before
+  0%
+    transform: rotate(0deg)
+    margin-top: -9px
+
+  50%
+    transform: rotate(0deg)
+    margin-top: 0px
+
+  100%
+    transform: rotate(-45deg)
+
+/* close end

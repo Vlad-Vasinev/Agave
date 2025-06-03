@@ -1,0 +1,247 @@
+.slide-button
+  cursor: pointer
+  .slide-button-inner
+    position: relative
+    overflow: hidden
+    & > span
+      display: block
+      transform: translateY(0)
+      transition: transform 0.4s 0.05s, color 0.2s linear, background-color 0.2s linear
+      &:nth-child(1)
+        position: static
+      &:nth-child(2)
+        position: absolute
+        width: 100%
+  &:hover
+    +rmin($sm1)
+      .slide-button-inner
+        & > span
+          transform: translateY(-100%)
+          &:nth-child(2)
+            position: absolute
+  &.slide-button_horizontal
+    .slide-button-inner
+      & > span
+        transform: translateX(0)
+        transition: transform 0.4s 0.05s, color 0.3s
+        &:nth-child(2)
+          top: 0
+          left: 100%
+    &:hover
+      +rmin($sm1)
+        .slide-button-inner
+          & > span
+            transform: translateX(-100%)
+  
+button.slide-button
+  padding: 0
+  color: unset
+  
+.button_medium.slide-button, .button_small.slide-button 
+  padding: 0
+  background-color: unset
+  overflow: hidden
+  @include gradient-safari-mixin
+  .slide-button-inner > span, > span:only-child
+    @extend .buttonM
+    display: block
+    padding: aCalc(20) aCalc(32)
+    color: #fff
+    text-align: center
+    +r($sm)
+      padding: 14px 32px
+      border-radius: 12px
+    &:nth-child(1)
+      background-color: $LightGreen
+    &:nth-child(2)
+      background-color: $Green
+    
+  
+
+.button_small.slide-button
+  .slide-button-inner > span, > span:only-child
+    @extend .buttonS
+    padding: aCalc(16) aCalc(24)
+    +r($sm)
+      padding: 10px 24px
+    
+.slide-button
+  &.slide-button_icon
+    .slide-button-inner > span, > span:only-child
+      display: flex
+      align-items: center
+      justify-content: center
+    svg
+      display: inline-block
+      width: auto
+      +aProp(margin-right, 16)
+      +aProp(height, 22)
+      +r($sm)
+        height: 20px
+        margin-right: 6px
+  &.slide-button_grey
+    .slide-button-inner > span, > span:only-child
+      color: #161616
+      &:nth-child(1)
+        background-color: $ColdStone
+      &:nth-child(2)
+        background-color: #B6B8C4
+  &.slide-button_biege
+    .slide-button-inner > span, > span:only-child
+      color: #161616
+      &:nth-child(1)
+        background-color: $Beige
+      &:nth-child(2)
+        background-color: $LightGreen
+        color: #fff
+  &.slide-button_white
+    .slide-button-inner > span, > span:only-child
+      color: $LightGreen
+      &:nth-child(1)
+        background-color: #fff
+      &:nth-child(2)
+        color: #fff
+
+.slide-button.slide-button_arrow
+  z-index: 2
+  bottom: 0
+  left: 0
+  overflow: hidden
+  border-radius: 50%
+  +aProp(width, 48)
+  height: auto
+  aspect-ratio: 1
+  background-color: $LightGreen
+  @include gradient-safari-mixin
+  +r($sm)
+    width: 48px
+  span
+    width: 100%
+    svg
+      width: 100%
+      height: auto
+    &:nth-of-type(1)
+      svg
+    &:nth-of-type(2)
+      svg
+        circle
+          fill: #fff
+        path
+          stroke: $LightGreen
+  &.slide-button_biege
+    background-color: $Beige !important
+    span
+      background-color: $Beige !important
+      &:nth-of-type(1)
+        svg
+          circle
+            fill: $Beige
+          path
+            stroke: #161616
+
+.toggle-tag.slide-button 
+  padding: 0
+  background-color: unset
+  overflow: hidden
+  @include gradient-safari-mixin
+  background-color: $WhiteGray
+  width: max-content
+  
+  +aProp(border-radius, 8)
+  +r($sm) 
+    border-radius: 8px
+  &.toggle-tag_active
+    &:after
+      display: none
+      background-image: none
+  &:active
+    transform: scale(.97)
+  .slide-button-inner > span, > span:only-child  
+    +aProp(border-radius, 8)
+    padding: aCalc(8) aCalc(16) aCalc(10)
+    color: #202020
+
+    width: max-content
+    white-space: nowrap
+    background-color: $WhiteGray
+    align-items: center
+    display: flex
+    cursor: pointer
+    +no-select
+    
+    +r($sm)
+      border-radius: 8px
+      padding: 12px 12px
+    &:nth-child(1)
+      background-color: $WhiteGray
+    &:nth-child(2)
+      background-color: $ColdStone
+  &:hover, &.toggle-tag_active
+    +rmin($sm1)
+      .slide-button-inner
+        & > span
+          transform: translateY(-100%)
+          &:nth-child(2)
+            position: absolute
+            
+  &.toggle-tag_active
+    .slide-button-inner > span:nth-child(2), > span:only-child
+      background-color: $LightGreen
+      color: #fff  
+      +r($sm)
+        padding: 8px 12px
+        color: #fff
+.toggle-tag.slide-button.toggle-tag_gray 
+  &.toggle-tag_active
+    .slide-button-inner > span:nth-child(2), > span:only-child
+      background-color: $ColdStone
+      color: $baseTextColor
+      &::after
+        background-color: $baseTextColor
+
+.slide-button
+  cursor: pointer
+  .slide-button-inner
+    text-transform: uppercase
+    color: #0E0E0E
+    font-size: aCalc(16)
+    font-style: normal
+    line-height: normal
+    text-transform: uppercase
+    position: relative
+    overflow: hidden
+    & > span
+      transform: translateY(0)
+      transition: transform 0.4s 0.05s, color 0.2s linear, background-color 0.2s linear
+      &:nth-child(1)
+        position: static
+      &:nth-child(2)
+        position: absolute
+        width: 100%
+  &:hover
+    +rmin($sm1)
+      .slide-button-inner
+        & > span
+          color: #006837
+          transform: translateY(-100%)
+          &:nth-child(2)
+            position: absolute
+  &.slide-button_horizontal
+    .slide-button-inner
+      & > span
+        transform: translateX(0)
+        transition: transform 0.4s 0.05s, color 0.3s
+        &:nth-child(2)
+          top: 0
+          left: 100%
+    &:hover
+      +rmin($sm1)
+        .slide-button-inner
+          & > span
+            transform: translateX(-100%)
+
+.slide-button.slide-button_icon .slide-button-inner>span, .slide-button.slide-button_icon>span:only-child
+  +r($sm)
+    font-size: 13px
+
+        

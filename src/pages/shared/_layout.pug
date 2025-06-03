@@ -1,0 +1,24 @@
+include ../utilities/_mixins
+doctype html
+html(lang="en")
+  head()
+    include _head
+
+  body
+
+    block header
+      include ../../components/header/_header
+
+    .page
+      block content
+
+    block footer
+      include ../../components/footer/_footer
+      include ../../components/modals/_modals
+
+    block scripts
+      include _scripts
+    
+    include _pages-list
+
+//-.fixed-block

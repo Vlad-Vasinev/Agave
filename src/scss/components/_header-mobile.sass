@@ -1,0 +1,41 @@
+.header-mobile
+  display: none
+  +r($sm)
+    display: block
+  &__inner 
+    display: none
+    justify-content: space-between
+    background-color: transparent
+    padding: 10px 16px
+    align-items: top
+    position: fixed
+    z-index: 200
+    top: 0
+    max-width: 736px
+    left: 0
+    right: 0
+    min-height: 112px
+    transition: min-height .35s
+    position: fixed
+    +r($sm)
+      display: flex
+      padding: 10px 8px
+    &.header-mobile_active 
+      min-height: 68px
+      background-color: #ffffff
+    &.header-mobile_active 
+      .svg-main
+        margin-bottom: 0
+      .svg-text
+        position: relative
+        z-index: 199
+        opacity: 0
+        transform: translateY(-100%)
+        visibility: hidden
+        transition: visibility 0s 0.31s, opacity 0s 0.10s, transform 0.3s 0s, -webkit-transform 0.3s 0s
+
+.header-mobile_active
+  background-color: #DFD7CC
+
+.header-mobile__close
+  display: none

@@ -1,0 +1,75 @@
+
+
+.footer
+  max-width: aCalc(1920)
+  margin: 0 auto
+  padding: 0 aCalc(80)
+  padding-bottom: aCalc(80)
+  +r($sm)
+    padding: 0 16px
+  &__inner
+    display: grid
+    grid-template-columns: aCalc(250) 1fr
+    gap: aCalc(668)
+    +r($sm)
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      gap: 8px
+  &__top
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    margin-bottom: 0
+    +r($sm)
+      order: 1
+    .logo
+      +r($sm)
+        display: none
+  &__bottom
+    display: grid 
+    grid-template-columns: repeat(2, aCalc(271))
+    gap: aCalc(193)
+    +r($sm)
+      order: 0
+      display: flex
+      flex-direction: column
+      flex-wrap: wrap
+      gap: 8px
+    a:nth-child(2)
+      grid-row: span 2
+      align-self: end
+      +r($sm)
+        margin-top: 32px
+        align-self: start
+  &-menu 
+    +r($sm)
+      min-width: 343px
+      width: 100%
+      display: flex 
+      flex-wrap: wrap
+    &__link 
+      color: #000
+      font-size: aCalc(16)
+      font-style: normal
+      line-height: normal
+      text-transform: uppercase
+      padding: aCalc(3) 0
+      +r($sm)
+        margin-right: 12px
+        margin-block: 6px
+        font-size: 13px
+        line-height: normal
+        margin-right: 12px
+        margin-bottom: 6px
+        border-radius: 24px
+        padding: 6px 12px
+        background-color: #F9F9F9
+      .slide-button-inner span
+        +r($sm)
+          font-size: 13px
+          line-height: normal
+          text-transform: uppercase
+      &.header__sale-button.slide-button_icon.slide-button.header__menu-item_mobile
+        span
+          display: block

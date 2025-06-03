@@ -1,0 +1,102 @@
+.mobile-menu
+  transform: translateY(-100%)
+  visibility: hidden
+  overflow: scroll
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), -webkit-transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.8s cubic-bezier(0.22, 1, 0.36, 1), -webkit-visibility 0.8s cubic-bezier(0.22, 1, 0.36, 1)
+  width: 100%
+  height: var(--app-height)
+  top: 0
+  padding-top: 10px
+  background-color: #ffffff
+  position: fixed
+  z-index: 199
+  +r($sm)
+    padding-top: 0
+  .container
+    +r($sm)
+      padding: 0 24px
+  .mobile-menu__buttons
+    +r($sm)
+      padding-top: 68px
+      display: flex
+      flex-direction: column
+  .header__info-link + .header__info-link
+    +r($sm)
+      padding-top: 14px
+  .address__el + .address__el
+    +r($sm)
+      margin-top: 12px
+  .address__el-subtitle
+    +r($sm) 
+      margin-bottom: 2px
+      font-size: 11px
+      line-height: 15px
+  .address__el-title
+    font-size: 18px
+    line-height: 24px
+  .header-drop
+    +r($sm)
+      max-width: 100%
+      margin-top: 142px
+      margin-bottom: 40px
+      visibility: visible
+      opacity: 1
+      position: relative
+    .slide-button-inner span 
+      +r($sm)
+        font-size: 24px
+        font-style: normal
+        font-weight: 400
+        line-height: 32px
+  .menu
+    display: grid
+    grid-template-columns: 111px 111px 111px
+    justify-content: center
+    gap: 5px
+    margin: 0 auto
+  .menu__el
+    width: 111px
+    height: 105px
+  .menu__link-img 
+    max-width: 40px
+    max-height: 44px
+    svg
+      width: 40px
+      height: 44px
+  .menu__link-sublink.header__sale-button.slide-button_icon.slide-button.header__menu-item_mobile span 
+    font-size: 12px
+    line-height: 16px
+    display: block
+    text-align: center
+    margin-top: 15px
+  &__buttons
+    display: flex
+    justify-content: space-between
+    margin-bottom: 32px
+  &_active 
+    visibility: visible
+    transform: translateY(0)
+
+@media(max-height: 376px) 
+  .mobile-menu__buttons
+    .address 
+      +r($sm)
+        margin: 0 auto
+
+.header-burger
+  width: 48px
+  height: 48px
+  display: grid
+  justify-content: center
+  align-items: center
+  border-radius: 46px
+  background-color: transparent
+  .header-burger__svg
+    [fill]
+      color: var(--headerColor)
+      fill: currentColor !important
+    color: var(--headerColor) !important
+  svg 
+    width: 28px
+    height: 28px
+    pointer-events: none

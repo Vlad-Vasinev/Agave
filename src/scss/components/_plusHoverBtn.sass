@@ -1,0 +1,28 @@
+
+.plusHover-btn
+  z-index: 2
+  right: aCalc(0)
+  top: aCalc(0)
+  position: absolute
+  display: grid
+  justify-content: center
+  align-content: center
+  border-radius: 50%
+  width: aCalc(45)
+  height: aCalc(45)
+  background-color: transparent
+  transition: all .3s
+  +r($sm)
+    width: 32px
+    height: 32px
+  svg
+    width: aCalc(25)
+    height: aCalc(25)
+    +r($sm)
+      width: 18px
+      height: 18px
+    path
+      transition-duration: 0.3s
+
+.plusHover-inner
+  position: relative

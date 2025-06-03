@@ -1,0 +1,218 @@
+//ordinary-slider .swiper-slide-active
+.ordinary-slider
+  .ordinary-slider__el.ordinary-slider__first 
+    position: relative
+    z-index: 100
+    display: flex
+    width: 100vw
+    flex-direction: column
+    +r($sm)
+      justify-content: flex-start
+      text-align: center
+      background-color: #DFD7CC !important
+    .move-next
+      position: absolute
+      z-index: 10
+      bottom: aCalc(24)
+      right: aCalc(24)
+      display: grid 
+      width: aCalc(44)
+      height: aCalc(44)
+      border-radius: 50%
+      background-color: #006837
+      justify-content: center
+      transform: translateZ(0)
+      -webkit-transform: translate3d(0, 0, 0)
+      -webkit-transform-style: preserve-3d
+      align-items: center
+      +r($sm)
+        display: none
+      svg 
+        width: aCalc(24)
+        height: aCalc(24)
+    .full-product__info
+      display: none
+  &__el
+    overflow: hidden
+    display: grid
+    justify-content: center
+    align-items: center
+    width: auto
+    +r($sm)
+      overflow: visible
+      max-width: unset
+      width: 100%
+    video
+      height: 100vh
+      object-fit: cover
+      +r($sm)
+        transform: none
+        width: auto
+        height: 100vh
+
+.ordinary-slider.swiper-container
+  overflow: hidden
+  .swiper-pagination-bullet
+    background-color: $White
+    margin: 0 !important
+    width: aCalc(4)
+    height: aCalc(4)
+  +r($sm)
+    position: relative
+  .swiper-pagination
+    position: absolute
+    z-index: 100
+    display: flex
+    max-width: max-content 
+    flex-direction: column
+    left: aCalc(26)
+    transform: none
+    top: auto
+    bottom: aCalc(26)
+    margin: 0
+    height: max-content
+    gap: aCalc(12)
+    .swiper-pagination-bullet
+      width: aCalc(4)
+      height: aCalc(4)
+    .swiper-pagination-bullet.swiper-pagination-bullet-active
+      left: aCalc(-2)
+      width: aCalc(8)
+      height: aCalc(8)
+      background-color: $UniversalGreen
+      +r($sm) 
+        left: -1px
+        width: 6px
+        height: 6px
+    +r($sm)
+      top: auto 
+      bottom: 36px
+      left: auto
+      right: 16px
+      width: 100%
+      gap: 8px
+      .swiper-pagination-bullet
+        background-color: $White
+        margin: 0 !important
+        width: 4px 
+        height: 4px
+
+/////R
+.ordinary-slider
+  .swiper-wrapper 
+    -webkit-backface-visibility: hidden
+  .swiper-container
+    width: unset
+  position: static
+  &__el:first-child
+    img, video
+      height: 100vh
+      width: 100vw
+      object-fit: cover 
+  &__el 
+    .video__el.video__el-main 
+      width: 100vw
+      height: 100vh
+      +r($sm)
+        margin: 0 auto
+    .video-wrapper
+      position: relative
+      +r($lg + 2)
+        transform: scaleY(3)
+      +r($sm)
+        overflow: hidden
+        transform: none
+  &__el
+    img
+      height: 100vh
+      min-width: unset
+      display: block
+      object-fit: cover
+      +r($sm)
+        height: 100%
+    +r($sm)
+      border-radius: 4px
+  &__el.swiper-slide
+    transition: .3s
+    cursor: pointer
+
+  .swiper-pagination-bullet
+    width: aCalc(6)
+    height: aCalc(6)
+    background-color: #000000
+    opacity: 1
+    +r($sm)
+      width: 6px
+      height: 6px
+  .swiper-pagination-bullet.swiper-pagination-bullet-active
+    opacity: 1
+    position: relative
+    top: aCalc(1)
+    width: aCalc(8)
+    height: aCalc(8)
+    +r($sm)
+      width: 8px
+      height: 8px
+    +r($sm)
+      top: aCalc(2)
+  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet
+    margin: 0 aCalc(12)
+    +r($sm)
+      margin: 0 7px
+  .slider-navigation-next, .slider-navigation-prev
+    background-color: transparent
+    position: absolute
+    bottom: aCalc(-45)
+    transform: translateY(50%)
+    z-index: 99
+    +r($sm)
+      bottom: -28px
+      transform: translateY(50%)
+    svg
+      width: aCalc(24)
+      height: aCalc(24)
+      +r($sm)
+        width: 24px
+        height: 24px
+  .slider-navigation-prev
+    left: 39%
+    +r($sm)
+      bottom: -37px
+      left: 0
+      svg
+        width: 24px !important
+        height: 24px !important
+    +r($ms)
+      left: 0
+  .slider-navigation-next.slide-button
+    transform: rotate(180deg)
+    background-color: transparent
+    border-radius: aCalc(12)
+    width: aCalc(44)
+    height: aCalc(44)
+    +r($sm)
+      width: 24px
+      height: 24px
+  .slider-navigation-prev.slide-button
+    margin-right: aCalc(8)
+    width: aCalc(44)
+    height: aCalc(44)
+    background-color: transparent
+    border-radius: aCalc(12)
+    +r($sm)
+      width: 24px
+      height: 24px
+  .slider-navigation-next
+    transform: translateY(50%) rotate(90deg)
+    right: 39%
+    +r($sm)
+      bottom: -37px
+      right: 0
+      transform: translateY(50%) rotate(180deg)
+      svg
+        width: 24px !important
+        height: 24px !important
+    +r($ms)
+      right: 0
+  +r($sm)
+    margin-bottom: 0

@@ -1,0 +1,45 @@
+@import "./vendor/normalize";
+
+// стили для модального окна
+// @import "../../node_modules/graph-modal/dist/graph-modal.min"
+
+// стили для табов
+// @import "../../node_modules/graph-tabs/dist/graph-tabs.min"
+
+// стили для библиотеки aos
+// @import "../../node_modules/aos/dist/aos";
+
+// стили для свайпера
+// @import "../../node_modules/swiper/swiper-bundle.min";
+@import "../../node_modules/zoomove/dist/zoomove";
+@import "../../node_modules/swiper/swiper-bundle.min";
+// базовые подключения
+// @import "../../src/resources/fonts";
+// @import "../../node_modules/@fancyapps/ui/dist/fancybox/fancybox";
+// @import '../../node_modules/@fancyapps/ui/dist/carousel/carousel.thumbs';
+// подключение fancybox
+
+@import "mixins/*";
+
+@import "fonts";
+@import "vars";
+@import "ui";
+
+@import "./_general.sass"; 
+
+@import "components/_header.sass"; 
+@import "components/_footer.sass"; 
+@import "components/_menu.sass"; 
+@import "components/_plusHoverBtn.sass"; 
+@import "components/_primary-content.sass"; 
+@import "components/_special-block.sass"; 
+@import "components/_email-block.sass"; 
+@import "components/catalogPage/_catalog.sass"; 
+@import "components/mini-gallery.sass"; 
+@import "components/productPage/_product.sass"; 
+@import "components/productPage/_choosers.sass"; 
+@import "components/_js-lazy.sass"; 
+@import "components/_footer.sass"; 
+
+@import "./components/blocks/*.sass";
+@import "./components/*.sass";

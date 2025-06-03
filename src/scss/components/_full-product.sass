@@ -1,0 +1,115 @@
+
+.full-product
+  position: relative
+  &__el 
+    padding: aCalc(65) aCalc(24) aCalc(24) aCalc(24)
+    height: 100vh
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+    +r($sm)
+      padding: 113px 16px 16px 16px
+      height: var(--app-height)
+    img
+      position: absolute
+      transform: translateZ(0)
+      -webkit-transform: translate3d(0, 0, 0)
+      -webkit-transform-style: preserve-3d
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      object-fit: cover
+      width: 100vw
+      height: 100vh
+      +r($sm)
+        top: 50%
+        transform: translateY(-50%)
+        height: auto
+    &.swiper-slide
+      position: initial
+      overflow: hidden
+  &__title 
+    position: relative
+    z-index: 1
+    max-width: max-content
+    margin: 0 auto
+    transform: translateX(50%) translateZ(0)
+    flex-grow: 3
+    +r($sm)
+      transform: translateX(0)
+      margin: 0
+    .h5-bold  
+      margin-bottom: aCalc(8)
+      +r($sm)
+        margin-bottom: 8px
+  .slider-navigation
+    .slider-navigation-prev
+      left: aCalc(24) !important
+      +r($sm)
+        display: block !important
+        left: 16px !important
+    .slider-navigation-next
+      right: aCalc(24) !important
+      +r($sm)
+        display: block !important
+        right: 16px !important
+    .slider-navigation-prev, .slider-navigation-next
+      top: 50%
+      z-index: 10
+      position: absolute
+      svg 
+        transform: translateZ(0)
+        -webkit-transform: translate3d(0, 0, 0)
+        -webkit-transform-style: preserve-3d
+        width: aCalc(48)
+        height: aCalc(48)
+        +r($sm)
+          width: 24px
+          height: 24px
+  &__info
+    -webkit-transform: translate3d(0, 0, 0)
+    position: fixed
+    z-index: 10
+    bottom: aCalc(24)
+    right: aCalc(24)
+    background-color: $White
+    padding: aCalc(24)
+    border-radius: aCalc(8)
+    margin-left: auto
+    max-width: aCalc(460)
+    +r($sm)
+      bottom: 16px
+      left: 16px
+      border-radius: 8px
+      padding: 12px
+      max-width: 260px
+      margin-left: 0
+    .h1 
+      margin-bottom: aCalc(12)
+      line-height: aCalc(32)
+      font-weight: 700
+      letter-spacing: aCalc(-2)
+      +r($sm)
+        letter-spacing: unset
+        margin-bottom: 12px
+        line-height: 24px
+    .h4 
+      margin-bottom: aCalc(24)
+      +r($sm)
+        font-size: 14px 
+        line-height: 18px
+        margin-bottom: 16px
+    a.h5-bold 
+      padding: aCalc(12)
+      color: $White
+      background-color: $BlackSheep
+      border-radius: aCalc(4)
+      max-width: max-content
+      transition: background-color .3s
+      &:hover
+        background-color: $UniversalGreen
+      +r($sm) 
+        background-color: $UniversalGreen
+        border-radius: 4px
+        padding: 10px
